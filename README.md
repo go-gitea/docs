@@ -1,0 +1,2 @@
+# gitea-docs
+Gitea: Docs

@@ -40,9 +40,8 @@ Fork -> Patch -> Push -> Pull Request
 
 ## License
 
-This project is under the Creative Commons Attribution-ShareAlike 4.0
-International Public License. See the [LICENSE](LICENSE) file for the full
-license text.
+This project is under the Apache-2.0 License. See the [LICENSE](LICENSE) file
+for the full license text.
 
 ## Copyright
 

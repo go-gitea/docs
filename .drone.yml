@@ -1,0 +1,37 @@
+workspace:
+  path: src
+
+pipeline:
+  build:
+    image: webhippie/hugo:latest
+    commands:
+      - hugo --cleanDestinationDir
+
+  checks:
+    image: webhippie/linkchecker:latest
+    commands:
+      - linkchecker -v http://localhost:8080
+
+  docker:
+    image: plugins/docker
+    repo: gitea/docs
+    tags: [ '${TAG}' ]
+    when:
+      event: tag
+      branch: refs/tags/*
+
+  docker:
+    image: plugins/docker
+    repo: gitea/docs
+    tags: [ 'latest' ]
+    when:
+      event: push
+      branch: master
+
+  gitter:
+    image: plugins/gitter
+
+services:
+  server:
+    image: webhippie/caddy:latest
+    command: [/usr/sbin/caddy, -port, 8080, -root, /drone/src/public]

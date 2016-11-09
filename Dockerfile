@@ -1,4 +1,5 @@
 FROM alpine:edge
+EXPOSE 80
 
 RUN apk update && \
   apk add \

@@ -4,6 +4,7 @@ workspace:
 pipeline:
   build:
     image: webhippie/hugo:latest
+    pull: true
     commands:
       - make build
 

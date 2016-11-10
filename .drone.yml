@@ -5,9 +5,7 @@ pipeline:
   build:
     image: webhippie/hugo:latest
     commands:
-      - apk -U add git
-      - git clone https://github.com/go-gitea/theme.git themes/gitea
-      - hugo --cleanDestinationDir
+      - make build
 
   checks:
     image: webhippie/linkchecker:latest

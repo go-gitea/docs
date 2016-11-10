@@ -28,7 +28,7 @@ To generate the website and serve it on [localhost:1313](http://localhost:1313)
 just execute this command and stop it with `Ctrl+C`:
 
 ```
-hugo server
+make server
 ```
 
 When you are done with your changes just create a pull request, after merging

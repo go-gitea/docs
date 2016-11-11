@@ -8,5 +8,7 @@ RUN apk update && \
   rm -rf \
     /var/cache/apk/*
 
-CMD ["/usr/sbin/caddy", "-port", "80", "-root", "/srv/www"]
-ADD public /srv/www
+CMD ["/usr/sbin/caddy", "-conf", "/etc/caddy/caddy.conf"]
+
+COPY docker/caddy.conf /etc/caddy/caddy.conf
+COPY public /srv/www

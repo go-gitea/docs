@@ -38,6 +38,11 @@ the pull request the website will be updated automatically.
 
 Fork -> Patch -> Push -> Pull Request
 
+## Authors
+
+* [Maintainers](https://github.com/orgs/go-gitea/people)
+* [Contributors](https://github.com/go-gitea/docs/graphs/contributors)
+
 ## License
 
 This project is under the Apache-2.0 License. See the [LICENSE](LICENSE) file

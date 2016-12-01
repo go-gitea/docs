@@ -1,12 +1,25 @@
 baseurl = "/"
 languageCode = "en-us"
-title = "Docs - Gitea"
+title = "Docs"
 theme = "gitea"
 disqusShortname = "gitea"
 disableRSS = false
 disableSitemap = false
 
+defaultContentLanguage = "en"
+
+[permalinks]
+  post = "/:year/:month/:title/"
+  page = "/:slug/"
+
 [params]
   Description = "Git with a cup of tea"
   Author = "The Gitea Authors"
   Website = "https://docs.gitea.io"
+  Toplink = "docs"
+
+# [languages]
+#   [languages.en]
+#     weight = 0
+#   [languages.de]
+#     weight = 1

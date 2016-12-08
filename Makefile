@@ -13,7 +13,8 @@ build: $(THEME)
 
 .PHONY: update
 update: $(THEME)
-	cd $(THEME) && git fetch --all --prune && git rebase origin/master
 
+.PHONY: $(THEME)
 $(THEME):
-	git clone https://github.com/go-gitea/theme.git $@
+	mkdir -p $@
+	curl https://dl.gitea.io/theme/master.tar.gz | tar xz -C $@

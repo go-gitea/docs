@@ -1,7 +1,13 @@
 THEME := themes/gitea
+PUBLIC := public
+ARCHIVE := https://dl.gitea.io/theme/master.tar.gz
 
 .PHONY: all
 all: build
+
+.PHONY: clean
+clean:
+	rm -rf $(PUBLIC) $(THEME)
 
 .PHONY: server
 server: $(THEME)
@@ -14,7 +20,6 @@ build: $(THEME)
 .PHONY: update
 update: $(THEME)
 
-.PHONY: $(THEME)
 $(THEME):
 	mkdir -p $@
-	curl https://dl.gitea.io/theme/master.tar.gz | tar xz -C $@
+	curl -s $(ARCHIVE) | tar xz -C $@

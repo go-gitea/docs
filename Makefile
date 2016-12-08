@@ -1,7 +1,13 @@
 THEME := themes/gitea
+PUBLIC := public
+ARCHIVE := https://dl.gitea.io/theme/master.tar.gz
 
 .PHONY: all
 all: build
+
+.PHONY: clean
+clean:
+	rm -rf $(PUBLIC) $(THEME)
 
 .PHONY: server
 server: $(THEME)
@@ -13,7 +19,7 @@ build: $(THEME)
 
 .PHONY: update
 update: $(THEME)
-	cd $(THEME) && git fetch --all --prune && git rebase origin/master
 
 $(THEME):
-	git clone https://github.com/go-gitea/theme.git $@
+	mkdir -p $@
+	curl -s $(ARCHIVE) | tar xz -C $@

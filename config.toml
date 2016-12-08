@@ -2,8 +2,8 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Docs - Gitea"
 theme = "gitea"
-disableRSS = true
-disableSitemap = true
+disableRSS = false
+disableSitemap = false
 
 [params]
   Description = "Git with a cup of tea"

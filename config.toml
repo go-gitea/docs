@@ -1,4 +1,4 @@
-baseurl = "/"
+baseurl = "https://docs.gitea.io/"
 languageCode = "en-us"
 title = "Docs"
 theme = "gitea"
@@ -6,7 +6,8 @@ disqusShortname = "gitea"
 disableRSS = false
 disableSitemap = false
 
-defaultContentLanguage = "en"
+defaultContentLanguage = "en-us"
+defaultContentLanguageInSubdir = true
 
 [permalinks]
   post = "/:year/:month/:title/"
@@ -18,8 +19,8 @@ defaultContentLanguage = "en"
   Website = "https://docs.gitea.io"
   Toplink = "docs"
 
-# [languages]
-#   [languages.en]
-#     weight = 0
-#   [languages.de]
-#     weight = 1
+[languages]
+  [languages.en-us]
+    weight = 0
+  [languages.zh-cn]
+    weight = 1

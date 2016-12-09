@@ -2,6 +2,7 @@ baseurl = "/"
 languageCode = "en-us"
 title = "Docs - Gitea"
 theme = "gitea"
+disqusShortname = "gitea"
 disableRSS = false
 disableSitemap = false
 

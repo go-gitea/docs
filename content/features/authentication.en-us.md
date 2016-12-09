@@ -5,6 +5,14 @@ weight: 10
 toc: true
 draft: false
 type: "docs"
+menu:
+  sidebar:
+    parent: "features"
+    name: "Authentication"
+    weight: 10
+    identifier: "authentication"
 ---
 
 # Authentication
+
+## TBD

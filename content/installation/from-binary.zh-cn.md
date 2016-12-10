@@ -1,6 +1,6 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "Installation from binary"
+title: "从二进制安装"
 weight: 10
 toc: true
 draft: false
@@ -8,13 +8,13 @@ type: "docs"
 menu:
   sidebar:
     parent: "installation"
-    name: "From binary"
+    name: "从二进制安装"
     weight: 20
     identifier: "install-from-binary"
 ---
 
-# Installation from binary
+# 从二进制安装
 
-All downloads come with SQLite, MySQL and PostgreSQL support, and are built with embedded assets. Keep in mind that this can be different for older releases.
+所有下载均包括 SQLite, MySQL 和 PostgreSQL 的支持，同时所有资源均已嵌入到可执行程序中，这一点和老版本有所不同。
 
 ## TBD

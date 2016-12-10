@@ -1,6 +1,6 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "Hacking on Gitea"
+title: "加入 Gitea 开源"
 weight: 10
 toc: false
 draft: false
@@ -8,34 +8,34 @@ type: "docs"
 menu:
   sidebar:
     parent: "advanced"
-    name: "Hacking on Gitea"
+    name: "加入 Gitea 开源"
     weight: 10
     identifier: "hacking-on-gitea"
 ---
 
 # Hacking on Gitea
 
-We won't cover the basics of a Golang setup within this guide. If you don't know how to get the environment up and running you should follow the official [install instructions](https://golang.org/doc/install).
+首先你需要一些运行环境，这和 [从源代码安装](zh-cn/installation/from-source) 相同，如果你还没有设置好，可以先阅读那个章节。
 
-If you want to contribute to Gitea you should fork the project and work on the `master` branch. There is a catch though, some internal packages are referenced by their GitHub URL. So you have to trick the Go tool to think that you work on a clone of the official repository. Start by downloading the source code as you normally would:
+如果你想为 Gitea 贡献代码，你需要 Fork 这个项目并且以 `master` 为开发分支。Gitea使用Govendor来管理依赖，因此所有依赖项都被工具自动copy在vendor子目录下。用下面的命令来下载源码：
 
 ```
 go get -d code.gitea.io/gitea
 ```
 
-Now it's time to fork the [Gitea repository](https://github.com/go-gitea/gitea) on GitHub, after that you should have to switch to the source directory on the command line:
+然后你可以在 Github 上 fork [Gitea 项目](https://github.com/go-gitea/gitea)，之后可以通过下面的命令进入源码目录：
 
 ```
 cd $GOPATH/src/code.gitea.io/gitea
 ```
 
-To be able to create pull requests you should add your forked repository as a remote to the Gitea sources, otherwise you can not apply the changes to our repository because of lacking write permissions:
+要创建 pull requests 你还需要在源码中新增一个 remote 指向你 Fork 的地址，直接推送到 origin 的话会告诉你没有写权限：
 
 ```
 git remote set-url origin git@github.com:<USERNAME>/gitea.git
 git fetch --all --prune
 ```
 
-You've got a working development environment for Gitea now. Take a look at the `Makefile` to get an overview about the available tasks. The most common tasks should be `make test` which will start our test environment and `make build` which will build a `gitea` binary into your working directory. Writing test cases is not mandatory to contribute, but we will be happy if you do.
+然后你就可以开始开发了。你可以看一下 `Makefile` 的内容。`make test` 可以运行测试程序， `make build` 将生成一个 `gitea` 可运行文件在根目录。如果你的提交比较复杂，尽量多写一些单元测试代码。
 
-That’s it! You are ready to hack on Gitea. Test your changes, push them to your repository and open a pull request.
+好了，到这里你已经设置好了所有的开发Gitea所需的环境。欢迎成为 Gitea 的 Contributor。

@@ -10,7 +10,7 @@ enableMissingTranslationPlaceholders: true
 
 permalinks:
   post: /:year/:month/:title/
-  docs: /:slug/
+  doc: /:slug/
   page: /:slug/
   default: /:slug/
 

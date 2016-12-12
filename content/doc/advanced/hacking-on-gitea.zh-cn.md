@@ -4,7 +4,6 @@ title: "加入 Gitea 开源"
 weight: 10
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "advanced"

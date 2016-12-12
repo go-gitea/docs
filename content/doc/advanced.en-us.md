@@ -4,10 +4,9 @@ title: "Advanced"
 weight: 30
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
     name: "Advanced"
-    weight: 30
+    weight: 40
     identifier: "advanced"
 ---

@@ -4,7 +4,6 @@ title: "Hacking on Gitea"
 weight: 10
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "advanced"

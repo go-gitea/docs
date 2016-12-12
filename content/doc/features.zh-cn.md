@@ -1,13 +1,12 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "进阶"
-weight: 30
+title: "特性"
+weight: 20
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
-    name: "进阶"
+    name: "特性"
     weight: 30
-    identifier: "advanced"
+    identifier: "features"
 ---

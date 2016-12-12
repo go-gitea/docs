@@ -6,9 +6,15 @@
 		<div class="col-xs-3">
 			{{ partial "menu" . }}
 		</div>
-		<div class="col-xs-8">
-			{{ range where .Site.Pages "Type" "default" }}
+		<div class="col-xs-9">
+			{{ range where .Site.Pages "Type" "page" }}
 				{{ .Content }}
+			{{ end }}
+
+			{{ if .Site.DisqusShortname }}
+				<div class="col-xs-12">
+					{{ template "_internal/disqus.html" . }}
+				</div>
 			{{ end }}
 		</div>
 	</div>

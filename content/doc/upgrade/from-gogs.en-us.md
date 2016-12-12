@@ -4,19 +4,17 @@ title: "Upgrade from Gogs"
 weight: 10
 toc: true
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "upgrade"
-    name: "From gogs"
-    weight: 30
+    name: "From Gogs"
+    weight: 10
     identifier: "upgrade-from-gogs"
 ---
 
-# Upgrade from gogs
+# Upgrade from Gogs
 
-If you are running Gogs which version is below 0.9.99, you can upgrade Gogs to Gitea smoothly.
-There are some steps to do below:
+If you are running Gogs which version is below 0.9.99, you can upgrade Gogs to Gitea smoothly. There are some steps to do below:
 
 * Stop Gogs
 * Copy Gogs `custom/conf/app.ini` to Gitea. If you have changed the templates, you have to merge them to Gitea's templates manually.

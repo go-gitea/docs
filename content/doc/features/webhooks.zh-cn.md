@@ -4,7 +4,6 @@ title: "Webhooks"
 weight: 10
 toc: true
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "features"

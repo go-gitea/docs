@@ -1,18 +1,17 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "Webhooks"
+title: "本地化"
 weight: 10
 toc: true
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "features"
-    name: "Webhooks"
-    weight: 30
-    identifier: "webhooks"
+    name: "本地化"
+    weight: 20
+    identifier: "localization"
 ---
 
-# Webhooks
+# 本地化
 
 ## TBD

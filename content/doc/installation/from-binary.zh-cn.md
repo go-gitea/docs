@@ -4,7 +4,6 @@ title: "从二进制安装"
 weight: 10
 toc: true
 draft: false
-type: "docs"
 menu:
   sidebar:
     parent: "installation"

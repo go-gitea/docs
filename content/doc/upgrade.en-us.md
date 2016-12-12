@@ -1,13 +1,12 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "升级"
+title: "Upgrade"
 weight: 10
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
-    name: "升级"
-    weight: 10
+    name: "Upgrade"
+    weight: 20
     identifier: "upgrade"
 ---

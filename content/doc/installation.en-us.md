@@ -4,7 +4,6 @@ title: "Installation"
 weight: 10
 toc: false
 draft: false
-type: "docs"
 menu:
   sidebar:
     name: "Installation"

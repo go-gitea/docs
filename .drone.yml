@@ -6,6 +6,7 @@ pipeline:
     image: webhippie/hugo:latest
     pull: true
     commands:
+      - make clean
       - make build
 
   checks:

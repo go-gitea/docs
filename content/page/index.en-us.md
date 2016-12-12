@@ -8,7 +8,11 @@ draft: false
 
 # What is Gitea?
 
-Gitea is a painless self-hosted Git service. You can compare it with GitHub, Bitbucket or Gitlab. The initial development have been done on [Gogs](http://gogs.io) but we have forked it and named it Gitea. If you want to read more about the reasons why we have done that please read [this](https://blog.gitea.io/welcome-to-gitea/) blog post.
+Gitea is a painless self-hosted Git service. You can compare it with
+GitHub, Bitbucket or Gitlab. The initial development have been done on
+[Gogs](http://gogs.io) but we have forked it and named it Gitea. If
+you want to read more about the reasons why we have done that please
+read [this](https://blog.gitea.io/2016/12/welcome-to-gitea/) blog post.
 
 ## Purpose
 

@@ -31,7 +31,8 @@ cd $GOPATH/src/code.gitea.io/gitea
 To be able to create pull requests you should add your forked repository as a remote to the Gitea sources, otherwise you can not apply the changes to our repository because of lacking write permissions:
 
 ```
-git remote set-url origin git@github.com:<USERNAME>/gitea.git
+git remote rename origin upstream
+git remote add origin git@github.com:<USERNAME>/gitea.git
 git fetch --all --prune
 ```
 

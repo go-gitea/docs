@@ -31,7 +31,8 @@ cd $GOPATH/src/code.gitea.io/gitea
 要创建 pull requests 你还需要在源码中新增一个 remote 指向你 Fork 的地址，直接推送到 origin 的话会告诉你没有写权限：
 
 ```
-git remote set-url origin git@github.com:<USERNAME>/gitea.git
+git remote rename origin upstream
+git remote add origin git@github.com:<USERNAME>/gitea.git
 git fetch --all --prune
 ```
 

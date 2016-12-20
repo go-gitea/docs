@@ -14,7 +14,7 @@ menu:
 
 # 使用包安装
 
-当前我们仅支持Mac平台下的 `brew` 安装
+当前我们仅支持 macOS 平台下的 `brew` 安装
 
 ```
 brew tap go-gitea/gitea

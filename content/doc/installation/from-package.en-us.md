@@ -14,7 +14,7 @@ menu:
 
 # Installation from package
 
-Currently we only support `brew` if you are using Mac OS X.
+Currently we only support `brew` if you are using macOS.
 
 ```
 brew tap go-gitea/gitea

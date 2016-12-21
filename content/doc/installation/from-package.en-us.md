@@ -1,6 +1,7 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
 title: "Installation from package"
+slug: "install-from-package"
 weight: 10
 toc: true
 draft: false
@@ -14,11 +15,23 @@ menu:
 
 # Installation from package
 
-Currently we only support `brew` if you are using macOS.
+## Linux
+
+We have not published any real package yet, we will update this page directly when we start to publish packages for any Linux distribution, in the meantime you should follow our [installation from binary]({{< relref "from-binary.en-us.md" >}}) guide.
+
+## Windows
+
+We have not published any package for Windows yet, we will update this page directly when we start to publish packages in the form of `MSI` installers or via [Chocolatey](https://chocolatey.org/), in the meantime you should follow our [installation from binary]({{< relref "from-binary.en-us.md" >}}) guide.
+
+## macOS
+
+Currently we only support the installation via `brew` for macOS. If you are not using [Homebrew](http://brew.sh/) you should follow our [installation from binary]({{< relref "from-binary.en-us.md" >}}) guide. To install Gitea via `brew` you just need to execute the following commands:
 
 ```
 brew tap go-gitea/gitea
 brew install gitea
 ```
 
-## TBD
+## Anything missing?
+
+Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

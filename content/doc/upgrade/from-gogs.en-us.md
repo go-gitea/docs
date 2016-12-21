@@ -18,12 +18,9 @@ If you are running Gogs which version is below 0.9.99, you can upgrade Gogs to G
 
 * Stop Gogs
 * Copy Gogs `custom/conf/app.ini` to Gitea.
-* If you have more custom content on `custom/` folder, like templates or
-  localization files, you should carrefully merge manually because these files
-  changed on Gitea.
+* If you have more custom content on `custom/` folder, like templates or localization files, you should carrefully merge manually because these files changed on Gitea.
 * Copy `data/` folder from Gogs to Gitea. It contains issue attachments and avatars.
 * Run Gitea
-* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost)
-   and `Rewrite all update hook of repositories` (needed when custom config path is changed).
+* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost) and `Rewrite all update hook of repositories` (needed when custom config path is changed).
 
 ## TBD

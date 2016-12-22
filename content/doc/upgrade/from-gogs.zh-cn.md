@@ -19,7 +19,8 @@ menu:
 
 * 停止 Gogs 的运行
 * 拷贝 Gogs 的配置文件 `custom/conf/app.ini` 到 Gitea 的相应位置。
-* 拷贝 Gogs 的 `conf/` 目录到 `options/` 目录。
-* 如果你自己修改过templates目录，你需要手工合并你的修改到Gitea的templates目录下。
+* 拷贝 Gitea 的 `options/` 到 Home 目录下。
+* 如果你还有更多的自定义内容，比如templates和localization文件，你需要手工合并你的修改到 Gitea 的 Options 下对应目录。
+* 拷贝 Gogs 的数据目录 `data/` 到 Gitea 相应位置。这个目录包含附件和头像文件。
 * 运行 Gitea
 * 登陆 Gitea 并进入 管理面板, 运行 `重新生成 '.ssh/authorized_keys' 文件（警告：不是 Gitea 的密钥也会被删除）` 和 `重新生成所有仓库的 Update 钩子（用于自定义配置文件被修改）`。

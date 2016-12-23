@@ -3,10 +3,10 @@
 
 <div class="container content">
 	<div class="row">
-		<div class="col-xs-3">
+		<div class="col-md-3">
 			{{ partial "menu" . }}
 		</div>
-		<div class="col-xs-9">
+		<div class="col-md-9">
 			{{ range where .Site.Pages "Type" "page" }}
 				{{ .Content }}
 			{{ end }}

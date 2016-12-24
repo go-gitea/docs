@@ -51,6 +51,7 @@ languages:
   en-us:
     weight: 0
     languageName: English
+
   zh-cn:
     weight: 1
     languageName: 中文(简体)
@@ -74,6 +75,99 @@ languages:
           weight: 40
           pre: code
         - name: 下载
+          url: https://dl.gitea.io/
+          weight: 50
+          pre: download
+        - name: GitHub
+          url: https://github.com/go-gitea/
+          weight: 60
+          pre: github
+
+  zh-tw:
+    weight: 2
+    languageName: 中文(繁體)
+    menu:
+      page:
+        - name: 網站
+          url: https://gitea.io/zh-tw/
+          weight: 10
+          pre: home
+        - name: 文件
+          url: /zh-tw/
+          weight: 20
+          pre: question
+          post: active
+        - name: 部落格
+          url: https://blog.gitea.io/
+          weight: 30
+          pre: rss
+        - name: 程式碼
+          url: https://code.gitea.io/
+          weight: 40
+          pre: code
+        - name: 下载
+          url: https://dl.gitea.io/
+          weight: 50
+          pre: download
+        - name: GitHub
+          url: https://github.com/go-gitea/
+          weight: 60
+          pre: github
+
+  pt-br:
+    weight: 3
+    languageName: Português Brasileiro
+    menu:
+      page:
+        - name: Página inicial
+          url: https://gitea.io/pt-br/
+          weight: 10
+          pre: home
+        - name: Documentação
+          url: /pt-br/
+          weight: 20
+          pre: question
+          post: active
+        - name: Blog
+          url: https://blog.gitea.io/
+          weight: 30
+          pre: rss
+        - name: Código-fonte
+          url: https://code.gitea.io/
+          weight: 40
+          pre: code
+        - name: Downloads
+          url: https://dl.gitea.io/
+          weight: 50
+          pre: download
+        - name: GitHub
+          url: https://github.com/go-gitea/
+          weight: 60
+          pre: github
+
+  nl-nl:
+    weight: 4
+    languageName: Nederlands
+    menu:
+      page:
+        - name: Website
+          url: https://gitea.io/nl-nl/
+          weight: 10
+          pre: home
+        - name: Docs
+          url: /nl-nl/
+          weight: 20
+          pre: question
+          post: active
+        - name: Blog
+          url: https://blog.gitea.io/
+          weight: 30
+          pre: rss
+        - name: Code
+          url: https://code.gitea.io/
+          weight: 40
+          pre: code
+        - name: Downloads
           url: https://dl.gitea.io/
           weight: 50
           pre: download

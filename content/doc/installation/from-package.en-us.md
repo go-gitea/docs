@@ -32,6 +32,22 @@ brew tap go-gitea/gitea
 brew install gitea
 ```
 
+## FreeBSD
+
+A FreeBSD port `www/gitea` is available.  You can install a pre-built binary package:
+
+```
+pkg install gitea
+```
+
+For the most up to date version, or to build the port with custom options, [install it from the port](https://www.freebsd.org/doc/handbook/ports-using.html):
+
+```
+su -
+cd /usr/ports/www/gitea
+make install clean
+```
+
 ## Anything missing?
 
 Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

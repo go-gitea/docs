@@ -31,7 +31,7 @@ The goal of this project is to make the easiest, fastest, and most painless way 
 - Gravatar and Federated avatar with custom source
 - Mail service
 - Administration panel
-- Supports MySQL, PostgreSQL, SQLite3 and [TiDB](https://github.com/pingcap/tidb) (experimental)
+- Supports MySQL, PostgreSQL, SQLite3, MSSQL and [TiDB](https://github.com/pingcap/tidb) (experimental)
 - Multi-language support ([21 languages](https://github.com/go-gitea/gitea/tree/master/options/locale))
 
 ## System Requirements
@@ -64,6 +64,7 @@ The goal of this project is to make the easiest, fastest, and most painless way 
   * [github.com/lib/pq](https://github.com/lib/pq)
   * [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
   * [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+  * [github.com/denisenkom/go-mssqldb](https://github.com/denisenkom/go-mssqldb)
 
 ## Software and Service Support
 

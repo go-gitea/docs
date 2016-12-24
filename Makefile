@@ -9,6 +9,10 @@ all: build
 clean:
 	rm -rf $(PUBLIC) $(THEME)
 
+.PHONY: trans-copy
+trans-copy:
+	@bash scripts/trans-copy
+
 .PHONY: server
 server: $(THEME)
 	hugo server

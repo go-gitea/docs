@@ -6,6 +6,8 @@ pipeline:
     image: webhippie/hugo:latest
     pull: true
     commands:
+      - make trans-copy
+
       - make clean
       - make build
 

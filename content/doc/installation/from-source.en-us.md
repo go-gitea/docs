@@ -47,8 +47,8 @@ git checkout v1.0.0
 Since we already bundle all required libraries to build Gitea you can continue with the build process itself. We provide various [make tasks](https://github.com/go-gitea/gitea/blob/master/Makefile) to keep the build process as simple as possible. Depending on your requirements you possibly want to add various build tags, you can choose between these tags:
 
 * `bindata`: With this tag you can embed all assets required to run an instance of Gitea, this makes a deployment quite easy because you don't need to care about any additional file.
-* `sqlite`: With this tag you can enable support for a SQLite3 database, this is only suggested for tiny Gitea installations.
-* `tidb`: With this tag you can enable support for a TiDB database, it's a quite simple file-based database comparable with SQLite.
+* `sqlite`: With this tag you can enable support for a [SQLite3](https://sqlite.org/) database, this is only suggested for tiny Gitea installations.
+* `tidb`: With this tag you can enable support for a [TiDB](https://github.com/pingcap/tidb) database, it's a quite simple file-based database comparable with SQLite.
 * `pam`: With this tag you can enable support for PAM (Linux Pluggable Authentication Modules), this is useful if your users should be authenticated via your available system users.
 
 Now it's time to build the binary, we suggest to embed the assets with the `bindata` build tag, to include the assets you also have to execute the `generate` make task, otherwise the assets are not prepared to get embedded:

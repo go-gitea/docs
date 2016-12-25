@@ -51,17 +51,7 @@ git checkout v1.0.0
 * `tidb`: 这个编译选项启用tidb嵌入式数据库的支持，他跟SQLite类似但是是用纯Go编写的。
 * `pam`: 这个编译选项将会启用 PAM (Linux Pluggable Authentication Modules) 认证，如果你使用这一认证模式的话需要开启这个选项。
 
-我们支持两种方式进行编译，Go 工具和 Make 工具。使用 Make工具 编译将会自动生成版本号，这是和 Go工具编译的唯一区别。
-
-* Go 工具
-
-使用 Go 工具编译需要你至少安装了Go 1.5以上版本并且将 govendor 的支持打开。执行命令如下：
-
-```
-go build -tags="bindata"
-```
-
-如果要使用bindata选项，你可能需要先执行go generate
+我们支持两种方式进行编译，Make 工具 和 Go 工具。不过我们推荐使用 Make工具，因为他将会给出更多的编译选项。
 
 * Make 工具
 
@@ -69,6 +59,14 @@ go build -tags="bindata"
 
 ```
 TAGS="bindata" make generate build
+```
+
+* Go 工具
+
+使用 Go 工具编译需要你至少安装了Go 1.5以上版本并且将 govendor 的支持打开。执行命令如下：
+
+```
+go build
 ```
 
 ## 测试

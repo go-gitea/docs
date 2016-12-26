@@ -15,6 +15,35 @@ Gitea is a painless self-hosted Git service. You can compare it with GitHub, Bit
 
 The goal of this project is to make the easiest, fastest, and most painless way of setting up a self-hosted Git service. With Go, this can be done with an independent binary distribution across ALL platforms that Go supports, including Linux, macOS and Windows, even on architectures like ARM or PowerPC.
 
+## Features
+
+- Activity timeline
+- SSH and HTTP/HTTPS protocols
+- SMTP/LDAP/Reverse proxy authentication
+- Reverse proxy with sub-path
+- Account/Organization/Repository management
+- Add/Remove repository collaborators
+- Repository/Organization webhooks (including Slack)
+- Repository Git hooks/deploy keys
+- Repository issues, pull requests and wiki
+- Migrate and mirror repository and its wiki
+- Web editor for repository files and wiki
+- Gravatar and Federated avatar with custom source
+- Mail service
+- Administration panel
+- Supports MySQL, PostgreSQL, SQLite3 and [TiDB](https://github.com/pingcap/tidb) (experimental)
+- Multi-language support ([21 languages](https://github.com/go-gitea/gitea/tree/master/options/locale))
+
+## System Requirements
+
+- A cheap Raspberry Pi is powerful enough for basic functionality.
+- 2 CPU cores and 1GB RAM would be the baseline for teamwork.
+
+## Browser Support
+
+- Please see [Semantic UI](https://github.com/Semantic-Org/Semantic-UI#browser-support) for specific versions of supported browsers.
+- The official support minimal size  is **1024*768**, UI may still looks right in smaller size but no promises and fixes.
+
 ## Components
 
 * Web framework: [Macaron](http://go-macaron.com/)
@@ -35,3 +64,7 @@ The goal of this project is to make the easiest, fastest, and most painless way 
   * [github.com/lib/pq](https://github.com/lib/pq)
   * [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
   * [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+
+## Software and Service Support
+
+- [Drone](https://github.com/drone/drone) (CI)

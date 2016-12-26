@@ -32,3 +32,7 @@ To unregister Gitea as a service, open `cmd` as an Administrator and run:
 ```
 sc remove gitea
 ```
+
+## Anything missing?
+
+Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

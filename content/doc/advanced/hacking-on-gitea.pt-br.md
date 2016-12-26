@@ -1,23 +1,24 @@
 ---
 date: "2016-12-01T16:00:00+02:00"
-title: "Hacking on Gitea"
-slug: "hacking-on-gitea"
+title: "Hacking no Gitea"
+slug: "hacking-no-gitea"
 weight: 10
 toc: false
 draft: false
 menu:
   sidebar:
-    parent: "advanced"
-    name: "Hacking on Gitea"
+    parent: "avancado"
+    name: "Hacking no Gitea"
     weight: 10
-    identifier: "hacking-on-gitea"
+    identifier: "hacking-no-gitea"
 ---
 
-# Hacking on Gitea
+# Hacking no Gitea
 
-We won't cover the basics of a Golang setup within this guide. If you don't know how to get the environment up and running you should follow the official [install instructions](https://golang.org/doc/install).
+Nós não iremos informar os conceitos básicos para configuração do [Golang](https://golang.org/) nesta documentação. Se você não sabe como configurar o ambiente para executar aplicações em Golang, você deve seguir a documentação oficial contendo as [instruções de instalação](https://golang.org/doc/install).
 
-If you want to contribute to Gitea you should fork the project and work on the `master` branch. There is a catch though, some internal packages are referenced by their GitHub URL. So you have to trick the Go tool to think that you work on a clone of the official repository. Start by downloading the source code as you normally would:
+Se você quer contribuir com o Gitea você deve fazer o fork do repositório do projeto e fazer as implementações no branch `master`. There is a catch though, some internal packages are referenced by their GitHub URL.
+So you have to trick the Go tool to think that you work on a clone of the official repository. Start by downloading the source code as you normally would:
 
 ```
 go get -d code.gitea.io/gitea
@@ -41,6 +42,6 @@ You've got a working development environment for Gitea now. Take a look at the `
 
 That’s it! You are ready to hack on Gitea. Test your changes, push them to your repository and open a pull request.
 
-## Anything missing?
+## Está faltando algo?
 
-Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.
+Está faltando algo nesta página? Então fique a vontade para nos informar em nosso [canal do Gitter](https://gitter.im/go-gitea/gitea/), lá iremos responder suas perguntas o mais breve possível.

@@ -68,14 +68,3 @@ The goal of this project is to make the easiest, fastest, and most painless way 
 ## Software and Service Support
 
 - [Drone](https://github.com/drone/drone) (CI)
-- [Fabric8](http://fabric8.io/) (DevOps)
-- [Taiga](https://taiga.io/) (Project Management)
-- [Puppet](https://forge.puppetlabs.com/Siteminds/gogs) (IT)
-- [Kanboard](http://kanboard.net/plugin/gogs-webhook) (Project Management)
-- [BearyChat](https://bearychat.com/) (Team Communication)
-- [HiWork](http://www.hiwork.cc/) (Team Communication)
-
-### Product Support
-
-- [Synology](https://www.synology.com) (Docker)
-- [One Space](http://www.onespace.cc) (App Store)

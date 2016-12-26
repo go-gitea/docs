@@ -68,14 +68,3 @@ Gitea的首要目标是创建一个极易安装，运行非常快速，安装和
 ## 软件及服务支持
 
 - [Drone](https://github.com/drone/drone) (CI)
-- [Fabric8](http://fabric8.io/) (DevOps)
-- [Taiga](https://taiga.io/) (Project Management)
-- [Puppet](https://forge.puppetlabs.com/Siteminds/gogs) (IT)
-- [Kanboard](http://kanboard.net/plugin/gogs-webhook) (Project Management)
-- [BearyChat](https://bearychat.com/) (Team Communication)
-- [HiWork](http://www.hiwork.cc/) (Team Communication)
-
-### 产品支持
-
-- [Synology](https://www.synology.com) (Docker)
-- [One Space](http://www.onespace.cc) (App Store)

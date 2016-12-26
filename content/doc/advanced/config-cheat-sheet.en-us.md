@@ -1,16 +1,15 @@
 ---
-name: Config Cheat Sheet
 date: "2016-12-26T16:00:00+02:00"
 title: "Config Cheat Sheet"
 slug: "config-cheat-sheet"
-weight: 10
+weight: 20
 toc: false
 draft: false
 menu:
   sidebar:
     parent: "advanced"
     name: "Config Cheat Sheet"
-    weight: 10
+    weight: 20
     identifier: "config-cheat-sheet"
 ---
 

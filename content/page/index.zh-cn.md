@@ -31,7 +31,7 @@ Gitea的首要目标是创建一个极易安装，运行非常快速，安装和
 - 支持自定义源的 Gravatar 和 Federated Avatar
 - 支持邮件服务
 - 支持后台管理面板
-- 支持 MySQL、PostgreSQL、SQLite3 和 TiDB（实验性支持） 数据库
+- 支持 MySQL、PostgreSQL、SQLite3, MSSQL 和 TiDB（实验性支持） 数据库
 - 支持多语言本地化（21 种语言）
 
 ## 系统要求
@@ -64,6 +64,7 @@ Gitea的首要目标是创建一个极易安装，运行非常快速，安装和
   * [github.com/lib/pq](https://github.com/lib/pq)
   * [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
   * [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+  * [github.com/denisenkom/go-mssqldb](https://github.com/denisenkom/go-mssqldb)
 
 ## 软件及服务支持
 

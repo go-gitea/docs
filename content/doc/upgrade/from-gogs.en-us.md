@@ -24,3 +24,7 @@ If you are running Gogs which version is below 0.9.99, you can upgrade Gogs to G
 * Copy `data/` folder from Gogs to Gitea. It contains issue attachments and avatars.
 * Run Gitea
 * Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost) and `Rewrite all update hook of repositories` (needed when custom config path is changed).
+
+## Anything missing?
+
+Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

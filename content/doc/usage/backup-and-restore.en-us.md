@@ -1,5 +1,5 @@
 ---
-date: "2016-12-27T16:00:00+02:00"
+date: "2017-01-01T16:00:00+02:00"
 title: "Usage: Backup and Restore"
 slug: "backup-and-restore"
 weight: 11
@@ -15,16 +15,11 @@ menu:
 
 # Backup and Restore
 
-Gitea currently has a `dump` command that will save your installation to a zip
-file. There will be a `restore` command implemented at some point in the future.
-You will be able to use this to back up your installation, as well as make
-migrating servers easier.
+Gitea currently has a `dump` command that will save your installation to a zip file. There will be a `restore` command implemented at some point in the future. You will be able to use this to back up your installation, as well as make migrating servers easier.
 
 ## Backup Command (`dump`)
 
-First, switch to the user running gitea: `su git` (or whatever user you are
-  using). Run `./gitea dump` in the gitea installation directory. You should
-  see some output similar to this:
+First, switch to the user running gitea: `su git` (or whatever user you are using). Run `./gitea dump` in the gitea installation directory. You should see some output similar to this:
 
 ```
 2016/12/27 22:32:09 Creating tmp work dir: /tmp/gitea-dump-417443001
@@ -38,7 +33,7 @@ First, switch to the user running gitea: `su git` (or whatever user you are
 Inside the `gitea-dump-1482906742.zip` file, you will find the following:
 
 * `custom/conf/app.ini` - This is your server config.
-* `gitea-db.sql` - the mysql dump (TODO add info for other databases)
+* `gitea-db.sql` - SQL dump of your database.
 * `gitea-repo.zip` - This zip will be a complete copy of your repo folder.
    See Config -> repository -> `ROOT` for the location.
 * `log/` - this will contain various logs. You don't need these if you are doing

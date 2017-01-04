@@ -57,6 +57,8 @@ Now it's time to build the binary, we suggest to embed the assets with the `bind
 TAGS="bindata" make generate build
 ```
 
+**Note**: We recommend the Go version 1.6 or higher because we are using vendoring and we don't set the required env variable for 1.5 anywhere.
+
 ## Test
 
 After following the steps above you will have a `gitea` binary within your working directory, first you can test it if it works like expected and afterwards you can copy it to the destination where you want to store it. When you launch Gitea manually from your CLI you can always kill it by hitting `Ctrl + C`.

@@ -124,6 +124,8 @@ Any configuration option that is marked by :exclamation: means that you should k
 - `USER`: Username of mailer (usually just your e-mail address).
 - `PASSWD`: Password of mailer.
 - `SKIP_VERIFY`: Do not verify the self-signed certificates.
+- `USE_SENDMAIL`: Use the operating system's `sendmail` command instead of SMTP.  This is common on linux systems.  Valid values are `true` to use sendmail and `false` to use SMTP (default).  Note that enabling sendmail will ignore all other `mailer` settings except `ENABLED`, `FROM` and `SENDMAIL_PATH`.
+- `SENDMAIL_PATH`: The location of sendmail on the operating system. This can be an absolute path (eg: `/usr/sbin/sendmail`) or just the name of the command (eg: `sendmail` - default) if it can be found in the `PATH` environment variable.
 
 Note: Actually, Gitea supports only SMTP with STARTTLS.
 

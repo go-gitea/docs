@@ -15,7 +15,7 @@ menu:
 
 # Upgrade from Gogs
 
-Gogs versions up to 0.9.97 can be smootlhy upgraded to Gitea.
+Gogs versions up to 0.9.115 can be smootlhy upgraded to Gitea.
 
 There are some steps to do so below.
 Make sure to complete them as the gitea user in ~:

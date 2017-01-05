@@ -15,7 +15,7 @@ menu:
 
 # 从 Gogs 升级
 
-如果你正在运行Gogs 0.9.97以下版本，你可以平滑的升级到Gitea。该升级需要如下的步骤：
+如果你正在运行Gogs 0.9.115以下版本，你可以平滑的升级到Gitea。该升级需要如下的步骤：
 
 * 停止 Gogs 的运行
 * 拷贝 Gogs 的配置文件 `custom/conf/app.ini` 到 Gitea 的相应位置。

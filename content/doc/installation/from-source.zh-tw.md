@@ -57,6 +57,8 @@ git checkout v1.0.0
 TAGS="bindata" make generate build
 ```
 
+**注意**: 因為使用了套件管理工具，我們建議 Go 環境版本為 1.6 或者是更高，這樣不用在 Go 1.5 版本設定全域變數 `GO15VENDOREXPERIMENT`。
+
 ## 測試
 
 完成上述步驟後，您可以在當下目錄發現 `gitea` 執行檔，在複製執行檔到遠端環境之前，您必須透過底下指令執行測試，使用 `Ctrl + C` 則可以關閉當下 gitea 程序。

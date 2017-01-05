@@ -53,6 +53,8 @@ git checkout v1.0.0
 
 我们支持两种方式进行编译，Make 工具 和 Go 工具。不过我们推荐使用 Make工具，因为他将会给出更多的编译选项。
 
+**Note**: We recommend the Go version 1.6 or higher because we are using vendoring and we don't set the required env variable for 1.5 anywhere.
+
 * Make 工具
 
 这个编译方式要求你先安装Make工具，关于Make工具的安装你可以参考Make相关资料。同样如果要使用bindata选项，你可能需要先执行make generate：

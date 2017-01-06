@@ -15,7 +15,10 @@ menu:
 
 # Upgrade from Gogs
 
-If you are running Gogs which version is below 0.9.99, you can upgrade Gogs to Gitea smoothly. There are some steps to do below:
+Gogs versions up to 0.9.97 can be smootlhy upgraded to Gitea.
+
+There are some steps to do so below.
+Make sure to complete them as the gitea user in ~:
 
 * Stop Gogs
 * Copy Gogs `custom/conf/app.ini` to Gitea.

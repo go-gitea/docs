@@ -15,47 +15,66 @@ menu:
 
 # Upgrade from Gogs
 
-Gogs versions up to 0.9.97 can be smootlhy upgraded to Gitea.
+Gogs versions up to 0.9.115 can be smootlhy upgraded to Gitea.
 
-There are some steps to do so below.
-Make sure to complete them as the gitea user in ~:
+There are some steps to do so below. On Unix run as your Gogs user:
 
-* Stop Gogs
-* cd ~
-* wget https://github.com/go-gitea/gitea/archive/v1.0.0.zip
-* unzip v1.0.0.zip
-* cp -r gogs gitea
-* If you have custom content migrated from gogs/custom/ folder, like templates or localization files, you should manually merge these because these files changed on Gitea.
-* cp -r gitea-v1.0.0/options gitea/options
-* cp -r gogs-repositories/ gitea-repositories
-* cp -r gogs-data/ gitea-data/
-* vim gitea/custom/conf/app.ini
+* Create a Gogs backup with `gogs dump`. This creates `gogs-dump-[timestamp].zip` file containing all your Gogs data. 
+* Download the file matching your platform from the [downloads page](https://dl.gitea.io/gitea)
+* Put the binary at the desired install location
+* Copy `gogs/custom/conf/app.ini` to `gitea/custom/conf/app.ini`
+* If you have custom `templates, public` in `gogs/custom/` copy them to `gitea/custom/`.
+  [Due to a bug](https://github.com/go-gitea/gitea/issues/529) custom templates aren't working at the moment.
+* If you have any other custom folders like `gitignore, label, license, locale, readme` in `gogs/custom/conf` copy them to `gitea/custom/options`.
+* Copy `gogs/data/` to `gitea/data/`. It contains issue attachments and avatars.
+* Verify by starting Gitea with `gitea web`
+* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost) and `Rewrite all update hook of repositories` (needed when custom config path is changed).
+  
+  
+### Change gogs specific information:
 
-Change gogs specific information:
+* Rename `gogs-repositories/` to `gitea-repositories/`
+* Rename `gogs-data/` to `gitea-data/`
+* In your `gitea/custom/conf/app.ini` change:
 
 FROM:
-* [database]
-* PATH = /home/:USER/gogs/data/:DATABASE.db
-* [attachment]
-* PATH = /home/:USER/gogs-data/attachments
-* [picture]
-* AVATAR_UPLOAD_PATH = /home/:USER/gogs-data/avatars
-* [log]
-* ROOT_PATH = /home/:USER/gogs/log
+```
+[database]
+PATH = /home/:USER/gogs/data/:DATABASE.db
+[attachment]
+PATH = /home/:USER/gogs-data/attachments
+[picture]
+AVATAR_UPLOAD_PATH = /home/:USER/gogs-data/avatars
+[log]
+ROOT_PATH = /home/:USER/gogs/log
+```
 
 TO:
-* [database]
-* PATH = /home/:USER/gitea/data/:DATABASE.db
-* [attachment]
-* PATH = /home/:USER/gitea-data/attachments
-* [picture]
-* AVATAR_UPLOAD_PATH = /home/:USER/gitea-data/avatars
-* [log]
-* ROOT_PATH = /home/:USER/gitea/log
+```
+[database]
+PATH = /home/:USER/gitea/data/:DATABASE.db
+[attachment]
+PATH = /home/:USER/gitea-data/attachments
+[picture]
+AVATAR_UPLOAD_PATH = /home/:USER/gitea-data/avatars
+[log]
+ROOT_PATH = /home/:USER/gitea/log
+```
 
-Verify working by running gitea
+* Verify by starting Gitea with `gitea web`
+  
+  
+### Add Gitea to startup on Unix
+Update the appropriate file from [gitea/scripts](https://github.com/go-gitea/gitea/tree/master/scripts) with the right environment variables.
 
-* ~/gitea/gitea web
-* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost) and `Rewrite all update hook of repositories` (needed when custom config path is changed).
+For distro's with systemd:
 
-Update the gitea-v1.0.0/scripts file for your specific distro and environment then copy.
+* Copy the updated script to `/etc/systemd/system/gitea.service`
+* Add the service to the startup with: `sudo systemctl enable gitea`
+* Disable old gogs startup script: `sudo systemctl disable gogs`
+
+For distro's with SysVinit:
+
+* Copy the updated script to `/etc/init.d/gitea`
+* Add the service to the startup with: `sudo rc-update add gitea`
+* Disable old gogs startup script: `sudo rc-update del gogs`

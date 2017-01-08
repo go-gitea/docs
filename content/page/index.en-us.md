@@ -38,7 +38,7 @@ The goal of this project is to make the easiest, fastest, and most painless way 
 
 - A cheap Raspberry Pi is powerful enough for basic functionality.
 - 2 CPU cores and 1GB RAM would be the baseline for teamwork.
-- Gitea is supposed to be run with a separate dedicated non-root user account on UNIX systems, no other mode of operation is supported. (**NOTE**: in case you run it with your own user account and the built-in SSH server disabled, Gitea modifies the `~/.ssh/authorized_keys` file, so you will **not** be able to interactively log in.)
+- Gitea is supposed to be run with a dedicated non-root user account on UNIX systems, no other mode of operation is supported. (**NOTE**: in case you run it with your own user account and the built-in SSH server disabled, Gitea modifies the `~/.ssh/authorized_keys` file so you will **not** be able to interactively log in.)
 
 ## Browser Support
 

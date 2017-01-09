@@ -140,6 +140,7 @@ Note: Actually, Gitea supports only SMTP with STARTTLS.
 - `PROVIDER`: Session engine provider, either `memory`, `file`, `redis`, or `mysql`.
 - `PROVIDER_CONFIG`: For file, it's the root path; for others, it's the host address and port number.
 - `COOKIE_SECURE`: Enable this to force using HTTPS for all session access.
+- `COOKIE_NAME`: The name of the cookie used for the session ID, defaults to `i_like_gogits`.
 - `GC_INTERVAL_TIME`: GC interval in seconds.
 
 ## Picture (`picture`)

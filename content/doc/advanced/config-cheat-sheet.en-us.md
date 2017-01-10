@@ -64,7 +64,8 @@ Any configuration option that is marked by :exclamation: means that you should k
 - `HTTP_PORT`: HTTP listen port.
 - `DISABLE_SSH`: Disables SSH feature when it's not available.
 - `START_SSH_SERVER`: Starts built-in SSH server when enabled.
-- `SSH_PORT`: The SSH port, in case yours is not `22`.
+- `SSH_PORT`: SSH port displayed in clone URL, in case yours is not `22`.
+- `SSH_LISTEN_PORT`: Port for the built-in SSH server, required if enabled.
 - `OFFLINE_MODE`: Disables use of CDN for static files and Gravatar for profile pictures.
 - `DISABLE_ROUTER_LOG`: Mutes printing of the router log.
 - `CERT_FILE`: Cert file path used for HTTPS.

@@ -15,7 +15,7 @@ menu:
 
 # Hacking on Gitea
 
-首先你需要一些运行环境，这和 [从源代码安装](/zh-cn/install-from-source) 相同，如果你还没有设置好，可以先阅读那个章节。
+首先你需要一些运行环境，这和 [从源代码安装]({{< relref "from-source.zh-cn.md" >}}) 相同，如果你还没有设置好，可以先阅读那个章节。
 
 如果你想为 Gitea 贡献代码，你需要 Fork 这个项目并且以 `master` 为开发分支。Gitea使用Govendor来管理依赖，因此所有依赖项都被工具自动copy在vendor子目录下。用下面的命令来下载源码：
 

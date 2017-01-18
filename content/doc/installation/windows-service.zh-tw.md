@@ -30,5 +30,5 @@ sc create gitea start= auto binPath= ""C:\gitea\gitea.exe" web --config "C:\gite
 要刪除 Gitea 服務，請用管理者身份執行 `cmd` 並且執行底下指令：
 
 ```
-sc remove gitea
+sc delete gitea
 ```

@@ -30,5 +30,5 @@ After, open "Windows Services", search for the service named "gitea", right-clic
 To unregister Gitea as a service, open `cmd` as an Administrator and run:
 
 ```
-sc remove gitea
+sc delete gitea
 ```

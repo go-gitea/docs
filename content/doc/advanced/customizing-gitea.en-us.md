@@ -19,4 +19,4 @@ The main way to customize Gitea is by using the `custom` folder. This is the cen
 
 ## Customizing /robots.txt
 
-To make Gitea serve your own `/robots.txt` (by default, an empty 404 status is served), simply create a file called `robots.txt` in the `custom` folder with the [expected contents](http://www.robotstxt.org/).
+To make Gitea serve your own `/robots.txt` (by default, an empty 404 status is served), simply create a file called `robots.txt` in the `custom` folder with the [expected contents](http://www.robotstxt.org/). **Note** that you have to restart Gitea for it to notice the new `robots.txt`.

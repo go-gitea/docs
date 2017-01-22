@@ -9,11 +9,11 @@ draft: false
 
 # 關於 Gitea
 
-Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub, Bitbucket 或 Gitlab 來比較看看。初期是從 [Gogs](http://gogs.io) 發展而來，不過我們已經 Fork 並且命名為 Gitea。如果您想更深入了解 Fork 原因，請直接參考[這裡](https://blog.gitea.io/2016/12/welcome-to-gitea/)。
+Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。初期是從 [Gogs](http://gogs.io) 發展而來，不過我們已經 Fork 並且命名為 Gitea。如果您想更深入了解 Fork 原因，請直接參考[這裡](https://blog.gitea.io/2016/12/welcome-to-gitea/)。
 
 ## 目標
 
-Gitea 的首要目標是建立一個容易安裝，運行快速，安装和使用體驗良好的自建 Git 服務。我們採用 GO 為後端語言，Go 可以產生各平台使用的執行檔。除了支援 Linux, macOS 和 Windows 外，甚至還包含 ARM 和 PowerPC。
+Gitea 的首要目標是建立一個容易安裝，運行快速，安装和使用體驗良好的自建 Git 服務。我們採用 GO 為後端語言，Go 可以產生各平台使用的執行檔。除了支援 Linux、macOS 和 Windows 外，甚至還包含 ARM 和 PowerPC。
 
 ## 功能
 
@@ -42,7 +42,7 @@ Gitea 的首要目標是建立一個容易安裝，運行快速，安装和使�
 ## 瀏覽器支援
 
 - 請參考 [Semantic UI](https://github.com/Semantic-Org/Semantic-UI#browser-support) 所支援的瀏覽器列表。
-- 官方支援最小 UI 此寸為 **1024*768**, UI 在更小此寸也看起來不錯，但是我們並不保證且修復。
+- 官方支援最小 UI 尺寸為 **1024*768**， UI 在更小尺寸也看起來不錯，但是我們並不保證。
 
 ## 元件
 

@@ -27,7 +27,7 @@ To keep your repositories and some other data persistent you should create a dir
 sudo mkdir -p /var/lib/gitea
 ```
 
-Now it's time to launch the docker container, this is a pretty straigt-forward process. You have to define the port mapping and you also have to provide the volume path for persisting the data:
+Now it's time to launch the docker container, this is a pretty straight-forward process. You have to define the port mapping and you also have to provide the volume path for persisting the data:
 
 ```
 docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data gitea/gitea:latest

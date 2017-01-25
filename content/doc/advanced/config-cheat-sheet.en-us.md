@@ -198,3 +198,4 @@ Note: Actually, Gitea supports only SMTP with STARTTLS.
 
 - `SHOW_FOOTER_BRANDING`: Enable this to show Gitea branding in the footer.
 - `SHOW_FOOTER_VERSION`: Enable this to show Gitea version information in the footer.
+- `SHOW_FOOTER_TEMPLATE_LOAD_TIME`: Enable this to show time of template execution in the footer.

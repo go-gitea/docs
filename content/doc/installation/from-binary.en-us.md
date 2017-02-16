@@ -30,6 +30,10 @@ After following the steps above you will have a `gitea` binary within your worki
 ./gitea web
 ```
 
+## Troubleshooting
+
+Older Linux distributions (such as Debian 7 and CentOS 6) may not be able to load the Gitea binary, usually resulting an error like ```./gitea: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.14' not found (required by ./gitea)```. This is due to the integrated SQLite support in the binaries we provide. In the future, we will provide binaries without the requirement for glibc. As a workaround, you can upgrade your distribution or [install from source]({{< relref "from-source.en-us.md" >}}).
+
 ## Anything missing?
 
 Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

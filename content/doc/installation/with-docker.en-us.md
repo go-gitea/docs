@@ -15,7 +15,11 @@ menu:
 
 # Installation with Docker
 
-We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you. First of all you should simply pull the Docker container:
+We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you. 
+
+## Data on Host
+
+First of all you should simply pull the Docker container:
 
 ```
 docker pull gitea/gitea:latest
@@ -35,6 +39,66 @@ docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data git
 
 Now you should have a running instance of Gitea, to access the web UI just visit http://hostname:10080 in your favorite browser, if you want to clone repositories you can do it in the above case with `git clone ssh://git@hostname:10022/username/repo.git`.
 
-## Anything missing?
+## Named Volumes 
+
+This guide will result in both the Gitea and PostgreSQL data stored in Docker named volumes. This makes for easy backup, restore and upgrades.
+
+### The Database
+
+First get the named volume ready:
+
+```
+$ docker volume create --name gitea-db-data
+```
+
+Now that we have a volume ready, we can pull and run the PostgreSQL image. This is also based upon Alpine Linux just like Gitea. This will mount the named volume at the correct location instead of a host dir.
+
+```
+$ docker pull postgres:alpine
+$ docker run -d --name gitea-db \
+    -e POSTGRES_PASSWORD=<PASSWORD> \
+    -v gitea-db-data:/var/lib/postgresql/data \
+    -p 5432:5432 \
+    postgres:alpine
+```
+
+Now the database is up and running, we need to configure it. Make sure you remember the password for when Gitea starts.
+
+```
+$ docker exec -it gitea-db psql -U postgres:alpine
+psql (9.6.1)
+Type "help" for help.
+
+postgres=# CREATE USER gitea WITH PASSWORD '<PASSWORD>';
+CREATE ROLE
+postgres=# CREATE DATABASE gitea OWNER gitea;
+CREATE DATABASE
+postgres=# \q
+$
+```
+
+### Gitea
+
+First, the named volume
+
+```
+$ docker volume create --name gitea-data
+```
+
+Now run (remove the dns entry if not needed):
+
+```
+$ docker run -d --name gitea \
+	--link gitea-db:gitea-db \
+	--dns 10.12.10.160 \
+	-p 11180:3000 \
+	-p 8322:22 \
+	-v gitea-data:/data \
+	gitea/gitea:latest
+```
+
+You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes.
+
+# Anything missing?
 
 Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

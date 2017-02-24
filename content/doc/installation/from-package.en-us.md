@@ -48,6 +48,10 @@ cd /usr/ports/www/gitea
 make install clean
 ```
 
+The port uses the standard FreeBSD file system layout: config files are in `/usr/local/etc/gitea`, bundled templates, options, plugins and themes are in `/usr/local/share/gitea`, and a start script is in `/usr/local/etc/rc.d/gitea`.
+
+To enable Gitea to run as a service, run `sysrc gitea_enable=YES` and start it with `service gitea start`. 
+
 ## Anything missing?
 
 Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.

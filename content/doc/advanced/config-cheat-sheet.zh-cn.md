@@ -69,7 +69,7 @@ menu:
 
 ## Database (`database`)
 
-- `DB_TYPE`: 数据库类型，可选 `mysql`, `postgres`, `tidb` 或 `sqlite3`。
+- `DB_TYPE`: 数据库类型，可选 `mysql`, `postgres`, `mssql`, `tidb` 或 `sqlite3`。
 - `HOST`: 数据库服务器地址和端口。
 - `NAME`: 数据库名称。
 - `USER`: 数据库用户名。

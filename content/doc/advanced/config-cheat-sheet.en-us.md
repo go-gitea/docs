@@ -77,7 +77,7 @@ Any configuration option that is marked by :exclamation: means that you should k
 
 ## Database (`database`)
 
-- `DB_TYPE`: The database type you choose, either `mysql`, `postgres` or `sqlite3`.
+- `DB_TYPE`: The database type you choose, either `mysql`, `postgres`, `mssql` or `sqlite3`.
 - `HOST`: Database host address and port.
 - `NAME`: Database name.
 - `USER`: Database username.

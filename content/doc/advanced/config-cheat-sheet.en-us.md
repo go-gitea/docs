@@ -74,6 +74,9 @@ Any configuration option that is marked by :exclamation: means that you should k
 - `STATIC_ROOT_PATH`: Upper level of template and static files path, default is the path where Gitea is located.
 - `ENABLE_GZIP`: Enables application-level GZIP support.
 - `LANDING_PAGE`: Non-logged-in users' landing page, either `home` or `explore`.
+- `LFS_START_SERVER`: Enables git-lfs support. `true` or `false`, default is `false`.
+- `LFS_CONTENT_PATH`: Where your lfs files put on, default is `data/lfs`.
+- `LFS_JWT_SECRET`: LFS authentication secret, changed this to yourself.
 
 ## Database (`database`)
 

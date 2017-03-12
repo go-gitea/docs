@@ -24,11 +24,10 @@ There are some steps to do so below. On Unix run as your Gogs user:
 * Put the binary at the desired install location
 * Copy `gogs/custom/conf/app.ini` to `gitea/custom/conf/app.ini`
 * If you have custom `templates, public` in `gogs/custom/` copy them to `gitea/custom/`.
-  [Due to a bug](https://github.com/go-gitea/gitea/issues/529) custom templates aren't working at the moment.
 * If you have any other custom folders like `gitignore, label, license, locale, readme` in `gogs/custom/conf` copy them to `gitea/custom/options`.
 * Copy `gogs/data/` to `gitea/data/`. It contains issue attachments and avatars.
 * Verify by starting Gitea with `gitea web`
-* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file` (caution: non-Gitea keys will be lost) and `Rewrite all update hook of repositories` (needed when custom config path is changed).
+* Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file`, then run `Rewrite all update hook of repositories` (needed when custom config path is changed).
   
   
 ### Change gogs specific information:

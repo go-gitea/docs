@@ -19,10 +19,18 @@ Gitea makes heavy use of Make to automate tasks and have a faster development. T
 
 ### On Linux
 
-You can install with your package manager. On Ubuntu, make is included in the `build-essential` package:
+You can install with your package manager. 
+
+On Ubuntu/Debian:
 
 ```bash
 sudo apt-get install build-essential
+```
+
+On Fedora/RHEL/CentOS:
+
+```bash
+sudo yum install make
 ```
 
 ### On Windows

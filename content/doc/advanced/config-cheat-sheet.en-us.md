@@ -99,8 +99,8 @@ Any configuration option that is marked by :exclamation: means that you should k
 
 ## OpenID (`openid`)
 
-- `ENABLE_OPENID_SIGNIN`: Whether to allow signin in via OpenID
-- `ENABLE_OPENID_SIGNUP`: Whether to allow registering via OpenID
+- `ENABLE_OPENID_SIGNIN`: Whether to allow signin in via OpenID (defaults to false).
+- `ENABLE_OPENID_SIGNUP`: Whether to allow registering via OpenID (defaults to false).
 - `WHITELISTED_URIS`: Space separated list of POSIX regexp patterns. If non empty OpenID URIs should match any of these to be granted access.
 - `BLACKLISTED_URIS`: Space separated list of POSIX regexp pattenrs. OpenID URI matching any of these is refused access.
 

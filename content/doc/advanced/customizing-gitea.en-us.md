@@ -17,9 +17,9 @@ menu:
 
 The main way to customize Gitea is by using the `custom` folder. This is the central place to override and configure features.
 
-## Specify my customerize folder
+## Specify the custom folder
 
-Set the env `GITEA_CUSTOM`.
+The default custom folder is `GITEA_HOME/custom`, and you can set it by the env `GITEA_CUSTOM`.
 
 ## Customizing /robots.txt
 

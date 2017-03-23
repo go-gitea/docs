@@ -57,11 +57,11 @@ Any configuration option that is marked by :exclamation: means that you should k
 
 ## Server (`server`)
 
-- `PROTOCOL`: Either `http` or `https`.
+- `PROTOCOL`: Either `http` or `https` or `fcgi`.
 - `DOMAIN`: Domain name of your server.
 - `ROOT_URL`: Full public URL of Gitea server.
-- `HTTP_ADDR`: HTTP listen address.
-- `HTTP_PORT`: HTTP listen port.
+- `HTTP_ADDR`: HTTP listen address. If `PROTOCOL` is set to `fcgi`, Gitea will listen for FastCGI requests on TCP socket defined by `HTTP_ADDR` and `HTTP_PORT` configuration settings.
+- `HTTP_PORT`: HTTP listen port. If `PROTOCOL` is set to `fcgi`, Gitea will listen for FastCGI requests on TCP socket defined by `HTTP_ADDR` and `HTTP_PORT` configuration settings.
 - `DISABLE_SSH`: Disables SSH feature when it's not available.
 - `START_SSH_SERVER`: Starts built-in SSH server when enabled.
 - `SSH_DOMAIN`: Domain name of your ssh server.

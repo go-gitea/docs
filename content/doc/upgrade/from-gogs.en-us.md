@@ -29,7 +29,6 @@ There are some steps to do so below. On Unix run as your Gogs user:
 * Verify by starting Gitea with `gitea web`.
 * Enter Gitea admin panel on the UI, run `Rewrite '.ssh/authorized_keys' file`, then run `Rewrite all update hook of repositories` (needed when custom config path is changed).
 
-
 ### Change gogs specific information:
 
 * Rename `gogs-repositories/` to `gitea-repositories/`
@@ -64,7 +63,6 @@ ROOT_PATH = /home/:USER/gitea/log
 
 ### Troubleshooting
 * If you encounter errors relating to custom templates in the `gitea//custom/templates` folder, try moving the templates causing the errors away one by one. They may not be compatible with Gitea.
-
 
 ### Add Gitea to startup on Unix
 Update the appropriate file from [gitea/scripts](https://github.com/go-gitea/gitea/tree/master/scripts) with the right environment variables.

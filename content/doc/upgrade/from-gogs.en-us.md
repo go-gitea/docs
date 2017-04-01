@@ -23,7 +23,7 @@ There are some steps to do so below. On Unix run as your Gogs user:
 * Download the file matching your platform from the [downloads page](https://dl.gitea.io/gitea)
 * Put the binary at the desired install location
 * Copy `gogs/custom/conf/app.ini` to `gitea/custom/conf/app.ini`
-* If you have custom `templates, public` in `gogs/custom/` copy them to `gitea/custom/`.
+* If you have custom `templates, public` in `gogs/custom/` copy them to `gitea/custom/`
 * If you have any other custom folders like `gitignore, label, license, locale, readme` in `gogs/custom/conf` copy them to `gitea/custom/options`.
 * Copy `gogs/data/` to `gitea/data/`. It contains issue attachments and avatars.
 * Verify by starting Gitea with `gitea web`
@@ -61,6 +61,9 @@ ROOT_PATH = /home/:USER/gitea/log
 ```
 
 * Verify by starting Gitea with `gitea web`
+
+### Troubleshooting
+ - If you encounter errors relating to custom templates in the `gitea//custom/templates` folder, try deleting `gitea/custom/templates`.
   
   
 ### Add Gitea to startup on Unix

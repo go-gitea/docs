@@ -62,7 +62,7 @@ ROOT_PATH = /home/:USER/gitea/log
 * Verify by starting Gitea with `gitea web`
 
 ### Troubleshooting
-* If you encounter errors relating to custom templates in the `gitea//custom/templates` folder, try moving the templates causing the errors away one by one. They may not be compatible with Gitea.
+* If you encounter errors relating to custom templates in the `gitea/custom/templates` folder, try moving the templates causing the errors away one by one. They may not be compatible with Gitea.
 
 ### Add Gitea to startup on Unix
 Update the appropriate file from [gitea/scripts](https://github.com/go-gitea/gitea/tree/master/scripts) with the right environment variables.

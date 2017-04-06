@@ -17,6 +17,14 @@ menu:
 
 The main way to customize Gitea is by using the `custom` folder. This is the central place to override and configure features.
 
+Use `GITEA_CUSTOM` to define another folder instead. For example:
+
+```
+GITEA_CUSTOM=/srv/gitea/mycustom ./gitea web
+```
+
+**Note** that by default Gitea will use the `custom` folder in the current working directory.
+
 ## Customizing /robots.txt
 
 To make Gitea serve your own `/robots.txt` (by default, an empty 404 status is served), simply create a file called `robots.txt` in the `custom` folder with the [expected contents](http://www.robotstxt.org/). **Note** that you have to restart Gitea for it to notice the new `robots.txt`.

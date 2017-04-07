@@ -67,7 +67,7 @@ ROOT_PATH = /home/:USER/gitea/log
 
 ### Add Gitea to startup on Unix
 
-Update the appropriate file from [gitea/scripts](https://github.com/go-gitea/gitea/tree/master/scripts) with the right environment variables.
+Update the appropriate file from [gitea/contrib](https://github.com/go-gitea/gitea/tree/master/contrib) with the right environment variables.
 
 For distro's with systemd:
 

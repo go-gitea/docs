@@ -18,7 +18,9 @@ menu:
 The main way to customize Gitea is by using the `custom` folder. This is the central place to override and configure features.
 
 If you install Gitea from binary, after the installation process ends, you can find the `custom` folder next to the binary.
-Gitea will create the folder for you and prepopulate it with a `conf` folder inside, where Gitea stores all the configuration settings provided through the installation steps ([give a look here](https://docs.gitea.io/en-us/config-cheat-sheet/) for a complete list).
+Gitea will create the folder for you and prepopulate it with a `conf` folder inside, where Gitea stores all the configuration settings provided through the installation steps (have a look [here](https://docs.gitea.io/en-us/config-cheat-sheet/) for a complete list).
+
+If you can't find the `custom` folder next to the binary, please check the `GITEA_CUSTOM` environment variable, that can be used to override the default path to something else. `GITEA_CUSTOM` might be set for example in your launch script file. Please have a look [here](https://docs.gitea.io/en-us/specific-variables/) for a complete list of environment variables.
 
 ## Customizing /robots.txt
 

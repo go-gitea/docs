@@ -32,6 +32,19 @@ There are some steps to do so below. On Unix run as your Gogs user:
 ### Change gogs specific information:
 
 * Rename `gogs-repositories/` to `gitea-repositories/`
+* Update the update git hook in each repository with:
+```
+cd gitea-repositories
+for user in $(ls); do 
+  for repo in $(ls $user); do 
+    echo instpecting "$PWD/$user/$repo"; 
+    if [ -e "$PWD/$user/$repo/hooks/update" ]; then 
+      echo fixing $PWD/$user/$repo/hooks/update 
+      sed -i 's/gogs/gitea/g' $PWD/$user/$repo/hooks/update 
+    fi
+  done
+done
+```
 * Rename `gogs-data/` to `gitea-data/`
 * In your `gitea/custom/conf/app.ini` change:
 

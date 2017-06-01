@@ -35,11 +35,18 @@ git branch -a
 git checkout v1.0
 ```
 
+If you would validate a Pull Request, first your must enable this new branch : (xyz is PR value)
+
+```
+git fetch origin pull/xyz/head:pr-xyz
+```
+
 Last but not least you can also directly build our tagged versions like `v1.0.0`, if you want to build Gitea from the source this is the suggested way for that. To use the tags you need to list the available tags and checkout a specific tag with the following commands:
 
 ```
 git tag -l
 git checkout v1.0.0
+git checkout pr-xyz
 ```
 
 ## Build

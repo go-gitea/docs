@@ -23,7 +23,7 @@ All default settings can be found in [app.ini](https://github.com/go-gitea/gitea
 
 Any configuration option that is marked by :exclamation: means that you should keep the default value unless you fully understand what you are doing.
 
-## Overall
+## Overall (`DEFAULT`)
 
 - `APP_NAME`: Application name, change to whatever you want.
 - `RUN_USER`: The user to run Gitea as, we recommend it be `git`; however, change this to whatever your username is if you run Gitea on your personal computer. Gitea may crash if this value is not set properly.

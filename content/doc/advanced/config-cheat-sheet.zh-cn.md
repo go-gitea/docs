@@ -17,7 +17,7 @@ menu:
 
 这是针对Gitea配置文件的说明，你可以了解Gitea的强大配置。需要说明的是，你的所有改变请修改 `custom/conf/app.ini` 文件而不是源文件。所有默认值可以通过 [app.ini](https://github.com/go-gitea/gitea/blob/master/conf/app.ini) 查看到。如果你发现 `%(X)s` 这样的内容，请查看 [ini](https://github.com/go-ini/ini/#recursive-values) 这里的说明。标注了 :exclamation: 的配置项表明除非你真的理解这个配置项的意义，否则最好使用默认值。
 
-## Overall
+## Overall (`DEFAULT`)
 
 - `APP_NAME`: 应用名称，改成你希望的名字。
 - `RUN_USER`: 运行Gitea的用户，推荐使用 `git`；如果在你自己的个人电脑使用改成你自己的用户名。如果设置不正确，Gitea可能崩溃。

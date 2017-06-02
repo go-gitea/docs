@@ -49,6 +49,12 @@ git checkout v1.0.0
 git checkout pr-xyz
 ```
 
+If you want to build a `bindata` build, make sure to install the `go-bindata` dependency:
+
+```
+go get -u github.com/jteeuwen/go-bindata/...
+```
+
 ## Build
 
 Since we already bundle all required libraries to build Gitea you can continue with the build process itself. We provide various [make tasks](https://github.com/go-gitea/gitea/blob/master/Makefile) to keep the build process as simple as possible. <a href='{{< relref "doc/advanced/make.en-us.md" >}}'>See here how to get Make</a>. Depending on your requirements you possibly want to add various build tags, you can choose between these tags:

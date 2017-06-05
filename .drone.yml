@@ -13,6 +13,7 @@ pipeline:
 
   docker:
     image: plugins/docker
+    pull: true
     repo: gitea/docs
     tags: [ '${DRONE_BRANCH##release/v}' ]
     when:
@@ -21,6 +22,7 @@ pipeline:
 
   docker:
     image: plugins/docker
+    pull: true
     repo: gitea/docs
     tags: [ 'latest' ]
     when:

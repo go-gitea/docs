@@ -39,6 +39,8 @@ Inside the `gitea-dump-1482906742.zip` file, you will find the following:
 * `log/` - this will contain various logs. You don't need these if you are doing
    a migration.
 
+Intermediate backup files are created in a temporary directory specified either with the `--tempdir` command-line parameter or the `TMPDIR` environment variable.
+
 ## Restore Command (`restore`)
 
 WIP: Does not exist yet.

@@ -22,11 +22,11 @@ Gitea will create the folder for you and prepopulate it with a `conf` folder ins
 
 If you can't find the `custom` folder next to the binary, please check the `GITEA_CUSTOM` environment variable, that can be used to override the default path to something else. `GITEA_CUSTOM` might be set for example in your launch script file. Please have a look [here](https://docs.gitea.io/en-us/specific-variables/) for a complete list of environment variables.
 
+**Note** that you have to restart Gitea for it to notice the changes.
+
 ## Customizing /robots.txt
 
 To make Gitea serve your own `/robots.txt` (by default, an empty 404 status is served), simply create a file called `robots.txt` in the `custom` folder with the [expected contents](http://www.robotstxt.org/).
-
-**Note** that you have to restart Gitea for it to notice the new `robots.txt`.
 
 ## Serving custom public files
 
@@ -48,3 +48,7 @@ When you find the correct .tmpl file, you need to copy it in the `custom/templat
 
 You can now customize the template you copied in `custom/templates`, being carefully to not break the Gitea syntax.
 Any statement contained inside `{{` and `}}` are Gitea templete's syntax and shouldn't be touch, unless you know what are you doing.
+
+## Customizing gitignores, labels, licenses, locales, and readmes.
+
+Place your own files in corresponding sub-folder under `custom/options`.

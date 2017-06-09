@@ -7,7 +7,7 @@
 ## Hosting
 
 This page is hosted on our infrastructure within Docker containers, it gets
-automcatically updated on every push to the `master` branch.
+automatically updated on every push to the `master` branch.
 
 If you want to host this page on your own you can take our docker image
 [gitea/docs](https://hub.docker.com/r/gitea/docs/).

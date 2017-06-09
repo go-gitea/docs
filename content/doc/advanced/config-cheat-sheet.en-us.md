@@ -23,6 +23,8 @@ All default settings can be found in [app.ini](https://github.com/go-gitea/gitea
 
 Any configuration option that is marked by :exclamation: means that you should keep the default value unless you fully understand what you are doing.
 
+Values containing `#` or `;` must be quoted using `` ` `` or `"""`.
+
 ## Overall (`DEFAULT`)
 
 - `APP_NAME`: Application name, change to whatever you want.

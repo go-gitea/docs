@@ -50,6 +50,10 @@ menu:
       url: https://github.com/go-gitea/
       weight: 60
       pre: github
+    - name: Discord Chat
+      url: https://discord.gg/NsatcWJ
+      weight: 70
+      pre: comment
 
 languages:
   en-us:
@@ -160,6 +164,10 @@ languages:
           url: https://github.com/go-gitea/
           weight: 60
           pre: github
+        - name: Chat no Discord
+          url: https://discord.gg/NsatcWJ
+          weight: 70
+          pre: comment
 
   nl-nl:
     weight: 4

@@ -59,11 +59,12 @@ Values containing `#` or `;` must be quoted using `` ` `` or `"""`.
 
 ## Server (`server`)
 
-- `PROTOCOL`: Either `http` or `https` or `fcgi`.
+- `PROTOCOL`: Either `http`, `https`, `fcgi`, or `unix`.
 - `DOMAIN`: Domain name of your server.
 - `ROOT_URL`: Full public URL of Gitea server.
-- `HTTP_ADDR`: HTTP listen address. If `PROTOCOL` is set to `fcgi`, Gitea will listen for FastCGI requests on TCP socket defined by `HTTP_ADDR` and `HTTP_PORT` configuration settings.
+- `HTTP_ADDR`: HTTP listen address. If `PROTOCOL` is set to `fcgi`, Gitea will listen for FastCGI requests on TCP socket defined by `HTTP_ADDR` and `HTTP_PORT` configuration settings. If `PROTOCOL` is set to `unix`, this should be the name of the Unix socket file to use.
 - `HTTP_PORT`: HTTP listen port. If `PROTOCOL` is set to `fcgi`, Gitea will listen for FastCGI requests on TCP socket defined by `HTTP_ADDR` and `HTTP_PORT` configuration settings.
+- `UNIX_SOCKET_PERMISSION`: Permisson mode for Unix socket, default is 666.
 - `DISABLE_SSH`: Disables SSH feature when it's not available.
 - `START_SSH_SERVER`: Starts built-in SSH server when enabled.
 - `SSH_DOMAIN`: Domain name of your ssh server.

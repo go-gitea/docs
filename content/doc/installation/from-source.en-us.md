@@ -76,4 +76,4 @@ After following the steps above you will have a `gitea` binary within your worki
 
 ## Anything missing?
 
-Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.
+Are we missing anything on this page? Then feel free to reach out to us on our [Discord server](https://discord.gg/NsatcWJ), there you will get answers to any question pretty fast.

@@ -19,5 +19,5 @@ menu:
 
 - 到[Github issue](https://github.com/go-gitea/gitea/issues)提问(因为项目维护人员来自世界各地，为保证沟通顺畅，请使用英文提问)
 - 中文问题到[gocn.io](https://gocn.io/topic/Gitea)提问
-- 访问 [Gitter channel - 英文](https://gitter.im/go-gitea/gitea/)
+- 访问 [Discord server - 英文](https://discord.gg/NsatcWJ)
 - 加入 QQ群 328432459 获得进一步的支持

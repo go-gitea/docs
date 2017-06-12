@@ -54,4 +54,4 @@ To enable Gitea to run as a service, run `sysrc gitea_enable=YES` and start it w
 
 ## Anything missing?
 
-Are we missing anything on this page? Then feel free to reach out to us on our [Gitter channel](https://gitter.im/go-gitea/gitea/), there you will get answers to any question pretty fast.
+Are we missing anything on this page? Then feel free to reach out to us on our [Discord server](https://discord.gg/NsatcWJ), there you will get answers to any question pretty fast.

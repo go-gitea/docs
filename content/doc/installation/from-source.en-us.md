@@ -17,6 +17,8 @@ menu:
 
 We won't cover the basics of a Golang setup within this guide. If you don't know how to get the environment up and running you should follow the official [install instructions](https://golang.org/doc/install).
 
+**Note**: Go version 1.7 or higher is required
+
 ## Download
 
 First of all you have to retrieve the source code, the easiest way is to simply use directly Go for that. Just call the following commands to fetch the source and to switch into the working directory.
@@ -63,8 +65,6 @@ Now it's time to build the binary, we suggest to embed the assets with the `bind
 ```
 TAGS="bindata" make generate build
 ```
-
-**Note**: We recommend the Go version 1.6 or higher because we are using vendoring and we don't set the required env variable for 1.5 anywhere.
 
 ## Test
 

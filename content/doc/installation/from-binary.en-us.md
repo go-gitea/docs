@@ -1,5 +1,5 @@
 ---
-date: "2016-12-01T16:00:00+02:00"
+date: "2017-06-19T12:00:00+02:00"
 title: "Installation from binary"
 slug: "install-from-binary"
 weight: 10
@@ -32,7 +32,13 @@ After following the steps above you will have a `gitea` binary within your worki
 
 ## Troubleshooting
 
+### Old glibc versions
+
 Older Linux distributions (such as Debian 7 and CentOS 6) may not be able to load the Gitea binary, usually resulting an error like ```./gitea: /lib/x86_64-linux-gnu/libc.so.6: version `GLIBC_2.14' not found (required by ./gitea)```. This is due to the integrated SQLite support in the binaries we provide. In the future, we will provide binaries without the requirement for glibc. As a workaround, you can upgrade your distribution or [install from source]({{< relref "from-source.en-us.md" >}}).
+
+### Running gitea on another port
+
+If getting an error like `702 runWeb()] [E] Failed to start server: listen tcp 0.0.0.0:3000: bind: address already in use` gitea needs to be started on another free port. This is possible using `./gitea web -p $PORT`.
 
 ## Anything missing?
 

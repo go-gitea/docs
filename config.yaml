@@ -54,6 +54,10 @@ menu:
       url: https://discord.gg/NsatcWJ
       weight: 70
       pre: comment
+    - name: Forum
+      url: https://discourse.gitea.io/
+      weight: 80
+      pre: group
 
 languages:
   en-us:
@@ -94,6 +98,14 @@ languages:
           url: https://github.com/go-gitea/
           weight: 60
           pre: github
+        - name: Discord Chat
+          url: https://discord.gg/NsatcWJ
+          weight: 70
+          pre: comment
+        - name: Forum
+          url: https://discourse.gitea.io/
+          weight: 80
+          pre: group
 
   zh-tw:
     weight: 2
@@ -129,6 +141,14 @@ languages:
           url: https://github.com/go-gitea/
           weight: 60
           pre: github
+        - name: Discord Chat
+          url: https://discord.gg/NsatcWJ
+          weight: 70
+          pre: comment
+        - name: Forum
+          url: https://discourse.gitea.io/
+          weight: 80
+          pre: group
 
   pt-br:
     weight: 3
@@ -168,6 +188,10 @@ languages:
           url: https://discord.gg/NsatcWJ
           weight: 70
           pre: comment
+        - name: Forum
+          url: https://discourse.gitea.io/
+          weight: 80
+          pre: group
 
   nl-nl:
     weight: 4
@@ -203,3 +227,11 @@ languages:
           url: https://github.com/go-gitea/
           weight: 60
           pre: github
+        - name: Discord Chat
+          url: https://discord.gg/NsatcWJ
+          weight: 70
+          pre: comment
+        - name: Forum
+          url: https://discourse.gitea.io/
+          weight: 80
+          pre: group

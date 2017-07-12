@@ -10,7 +10,7 @@ menu:
     parent: "usage"
     name: "Backup and Restore"
     weight: 10
-    identifier: "backup-and-restore"
+    identifier: "command-line"
 ---
 
 ## Command Line

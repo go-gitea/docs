@@ -8,7 +8,7 @@ draft: false
 menu:
   sidebar:
     parent: "usage"
-    name: "Backup and Restore"
+    name: "Command Line"
     weight: 10
     identifier: "command-line"
 ---

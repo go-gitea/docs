@@ -99,6 +99,12 @@ $ docker run -d --name gitea \
 
 You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes.
 
+# Customization
+
+Customization files described [here](https://docs.gitea.io/en-us/customizing-gitea/) should be placed in `/data/gitea` directory.
+
+Configuration file after installation will be saved at `/data/gitea/conf/app.ini`
+
 # Anything missing?
 
 Are we missing anything on this page? Then feel free to reach out to us on our [Discord server](https://discord.gg/NsatcWJ), there you will get answers to any question pretty fast.

@@ -3,7 +3,7 @@
 Install supervisor by running below command in terminal:
 ```sudo apt install supervisor```
 Create a log dir for the supervisor logs(assuming gitea is installed in /home/git/gitea/):
-```sudo mkdir /home/git/gitea/log/supervisor```
+```mkdir /home/git/gitea/log/supervisor```
 Open supervisor config file in vi/vim/nano etc.
 ```sudo vim /etc/supervisor/supervisord.conf```
 And append the following code at the end of the file:

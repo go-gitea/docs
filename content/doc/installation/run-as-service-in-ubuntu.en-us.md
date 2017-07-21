@@ -1,3 +1,18 @@
+---
+date: "2017-07-21T12:00:00+02:00"
+title: "Run as service in Linux"
+slug: "linux-service"
+weight: 10
+toc: true
+draft: false
+menu:
+  sidebar:
+    parent: "installation"
+    name: "Linux service"
+    weight: 20
+    identifier: "linux-service"
+---
+
 ### Run as service in Ubuntu 16.04 LTS  
 #### Using supervisor  
 

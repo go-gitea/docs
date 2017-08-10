@@ -125,6 +125,15 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     * Which group LDAP attribute contains an array above user attribute names.
     * Example: `memberUid`
 
+**Using Microsoft AD**
+```
+Port: 389
+User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
+Username: sAMAccountName
+```
+
+
 ## PAM
 
 To configure this you just need to set the 'PAM Service Name' to a filename in `/etc/pam.d/`.
@@ -160,16 +169,6 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
   
 - This authentication is activate
   - Enable or disable this auth.
-
-## Microsoft AD
-
-
-```
-Port: 389
-User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
-Username: sAMAccountName
-```
 
 
 ## Freeipa

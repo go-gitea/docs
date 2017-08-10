@@ -161,6 +161,17 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 - This authentication is activate
   - Enable or disable this auth.
 
+## Microsoft AD
+
+
+```
+Port: 389
+User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
+Username: sAMAccountName
+```
+
+
 ## Freeipa
 
 - In order to login to Gitea using FreeIPA credentials, you need to create a bind account for Gitea to use:

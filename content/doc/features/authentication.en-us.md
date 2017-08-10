@@ -163,7 +163,7 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 
 ## Freeipa
 
-- In order to login to the Gogs using FreeIPA credentials, you need to create a bind account for Gogs to use:
+- In order to login to Gitea using FreeIPA credentials, you need to create a bind account for Gitea to use:
 
 -  On the FreeIPA server, create a `gogs.ldif` file, replacing dc=example,dc=com with your DN, and providing an appropriately secure password:
 ```
@@ -188,5 +188,5 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 ```
 -  Note! if you get error about ipa credentials please run kinit admin and give your admin accound password.
 
--  Now login to the gogs as an Admin, click on “Authentication” under Admin Panel. Then click New LDAP Source and fill in the details, changing all where appropriate to your own domain
+-  Now login to the Gitea as an Admin, click on “Authentication” under Admin Panel. Then click New LDAP Source and fill in the details, changing all where appropriate to your own domain
 

@@ -67,6 +67,13 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     address. This will be used to populate their account information.
   - Example: `mail`
 
+```
+Port: 389
+User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
+Username: sAMAccountName
+```
+
 **LDAP via BindDN** adds the following fields:
 
 - Bind DN (optional)
@@ -124,6 +131,14 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
 * Group Attribute for User (optional)
     * Which group LDAP attribute contains an array above user attribute names.
     * Example: `memberUid`
+
+```
+Port: 389
+User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
+Username: sAMAccountName
+```
+
 
 **Using Microsoft AD**
 ```
@@ -199,4 +214,12 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 -  Note! if you get error about ipa credentials please run kinit admin and give your admin accound password.
 
 -  Now login to the Gitea as an Admin, click on “Authentication” under Admin Panel. Then click New LDAP Source and fill in the details, changing all where appropriate to your own domain
+
+```
+Port: 389
+User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
+Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
+Username: sAMAccountName
+```
+
 

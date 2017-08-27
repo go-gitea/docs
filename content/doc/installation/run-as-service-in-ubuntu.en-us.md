@@ -88,7 +88,7 @@ Environment=USER=git HOME=/home/git
 WantedBy=multi-user.target
 ```  
 
-Uncomment any service need to enabled like mysql in this case in Unit section.  
+Uncomment any service need to be enabled like mysql in this case in Unit section.  
 
 Change the user(git) accordingly to yours. And /home/git too if your username is different than git. Change the PORT or remove the -p flag if default port is used.  
 

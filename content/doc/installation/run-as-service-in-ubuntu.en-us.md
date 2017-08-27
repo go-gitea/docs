@@ -52,7 +52,6 @@ Lastly start and enable supervisor at boot:
 ```sudo systemctl start supervisor```  
 ```sudo systemctl enable supervisor```  
 
-### Run as systemd service in Ubuntu 16.04 LTS  
  
 #### Using systemd  
 

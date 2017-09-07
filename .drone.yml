@@ -1,5 +1,12 @@
 workspace:
+  base: /srv/app
   path: src
+
+clone:
+  git:
+    image: plugins/git:1
+    depth: 50
+    tags: true
 
 pipeline:
   build:
@@ -11,8 +18,9 @@ pipeline:
       - make build
 
   docker:
-    image: plugins/docker
+    image: plugins/docker:17.05
     pull: true
+    secrets: [ docker_username, docker_password ]
     repo: gitea/docs
     tags: [ '${DRONE_BRANCH##release/v}' ]
     when:
@@ -20,8 +28,9 @@ pipeline:
       branch: [ release/* ]
 
   docker:
-    image: plugins/docker
+    image: plugins/docker:17.05
     pull: true
+    secrets: [ docker_username, docker_password ]
     repo: gitea/docs
     tags: [ 'latest' ]
     when:
@@ -29,9 +38,9 @@ pipeline:
       branch: [ master ]
 
   discord:
-    image: appleboy/drone-discord
-    webhook_id: ${WEBHOOK_ID}
-    webhook_token: ${WEBHOOK_TOKEN}
+    image: appleboy/drone-discord:1.0.0
+    pull: true
+    secrets: [ discord_webhook_id, discord_webhook_token ]
     when:
       event: [ push, tag, pull_request ]
       status: [ changed, failure ]

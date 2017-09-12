@@ -25,6 +25,8 @@ Any configuration option that is marked by :exclamation: means that you should k
 
 Values containing `#` or `;` must be quoted using `` ` `` or `"""`.
 
+**Note** that you have to restart Gitea for changes to take effect.
+
 ## Overall (`DEFAULT`)
 
 - `APP_NAME`: Application name, change to whatever you want.

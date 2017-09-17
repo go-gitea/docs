@@ -101,6 +101,7 @@ Values containing `#` or `;` must be quoted using `` ` `` or `"""`.
 - `COOKIE_USERNAME`: Name of the cookie that saves username.
 - `COOKIE_REMEMBER_NAME`: Name of cookie that saves auto-login information.
 - `REVERSE_PROXY_AUTHENTICATION_USER`: Header name for reverse proxy authentication username.
+- `DISABLE_GIT_HOOKS`: Prevent all users (including admin) from creating custom git hooks (defaults to false)
 
 ## OpenID (`openid`)
 

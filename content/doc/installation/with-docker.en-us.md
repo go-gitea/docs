@@ -97,7 +97,7 @@ $ docker run -d --name gitea \
 	gitea/gitea:latest
 ```
 
-You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes.
+You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes and you should have a running instance of Gitea, to access the web UI just visit http://hostname:11180 in your favorite browser.
 
 # Customization
 

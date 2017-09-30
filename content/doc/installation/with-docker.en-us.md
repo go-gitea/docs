@@ -15,7 +15,12 @@ menu:
 
 # Installation with Docker
 
-We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you. 
+We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you.
+
+This document explains how to install gitea in two different ways (choose one of the two):
+
+- Data on Host (data are stored on Docker host)
+- Named Volumes (data are stored using  PostgreSQL database and Docker volume)
 
 ## Data on Host
 

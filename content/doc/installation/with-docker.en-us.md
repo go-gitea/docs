@@ -44,6 +44,8 @@ docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data git
 
 Now you should have a running instance of Gitea, to access the web UI just visit http://hostname:10080 in your favorite browser, if you want to clone repositories you can do it in the above case with `git clone ssh://git@hostname:10022/username/repo.git`.
 
+`hostname` should be replaced by ip adress of your gitea server.
+
 ## Named Volumes 
 
 This guide will result in both the Gitea and PostgreSQL data stored in Docker named volumes. This makes for easy backup, restore and upgrades.
@@ -103,6 +105,16 @@ $ docker run -d --name gitea \
 ```
 
 You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes and you should have a running instance of Gitea, to access the web UI just visit http://hostname:11180 in your favorite browser.
+
+In the web UI set:
+- Database Type: PostgreSQL
+- Host: gitea-db:5434
+- User: gitea
+- Password: <PASSWORD>
+- ...
+- Application URL: http://hostname:11180
+
+Apply settings. You should be able to access to web UI now and create your first user.
 
 # Customization
 

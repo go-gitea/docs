@@ -15,7 +15,12 @@ menu:
 
 # Installation with Docker
 
-We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you. 
+We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you.
+
+This document explains how to install gitea in two different ways (choose one of the two):
+
+- Data on Host (data are stored on Docker host)
+- Named Volumes (data are stored using  PostgreSQL database and Docker volume)
 
 ## Data on Host
 
@@ -38,6 +43,8 @@ docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data git
 ```
 
 Now you should have a running instance of Gitea, to access the web UI just visit http://hostname:10080 in your favorite browser, if you want to clone repositories you can do it in the above case with `git clone ssh://git@hostname:10022/username/repo.git`.
+
+`hostname` should be replaced by ip adress of your gitea server.
 
 ## Named Volumes 
 
@@ -97,7 +104,18 @@ $ docker run -d --name gitea \
 	gitea/gitea:latest
 ```
 
-You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes.
+You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes and you should have a running instance of Gitea, to access the web UI just visit http://hostname:11180/install/ in your favorite browser.
+
+In the web UI set:
+- Database Type: PostgreSQL
+- Host: gitea-db:5432
+- User: gitea
+- Password: <PASSWORD>
+- ...
+- HTTP port: 11180
+- Application URL: http://hostname:11180
+
+Apply settings. You should be able to access to web UI now and create your first user.
 
 # Customization
 

@@ -108,10 +108,11 @@ You should now have two Docker containers for Gitea and PostgreSQL plus two Dock
 
 In the web UI set:
 - Database Type: PostgreSQL
-- Host: gitea-db:5434
+- Host: gitea-db:5432
 - User: gitea
 - Password: <PASSWORD>
 - ...
+- HTTP port: 11180
 - Application URL: http://hostname:11180
 
 Apply settings. You should be able to access to web UI now and create your first user.

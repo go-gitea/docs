@@ -17,111 +17,179 @@ menu:
 
 We provide automatically updated Docker images within our Docker Hub organization. It is up to you and your deployment to always use the latest stable tag or to use another service that updates the Docker image for you.
 
-This document explains how to install gitea in two different ways (choose one of the two):
+This reference setup guides you through the setup based on `docker-compose`, the installation of `docker-compose` is out of scope of this documentation. To install `docker-compose` follow the official [install instructions](https://docs.docker.com/compose/install/).
 
-- Data on Host (data are stored on Docker host)
-- Named Volumes (data are stored using  PostgreSQL database and Docker volume)
+## Basics
 
-## Data on Host
+The most simple setup just creates a volume and a network and starts the `gitea/gitea:latest` image as a service. Since there is no database available you can start it only with SQLite3. Create a directory like `gitea` and paste the following content into a file named `docker-compose.yml`.
 
-First of all you should simply pull the Docker container:
+```yaml
+version: "2"
 
-```
-docker pull gitea/gitea:latest
-```
+networks:
+  gitea:
+    external: false
 
-To keep your repositories and some other data persistent you should create a directory that stores this data in the future.
-
-```
-sudo mkdir -p /var/lib/gitea
-```
-
-Now it's time to launch the docker container, this is a pretty straight-forward process. You have to define the port mapping and you also have to provide the volume path for persisting the data:
-
-```
-docker run -d --name=gitea -p 10022:22 -p 10080:3000 -v /var/lib/gitea:/data gitea/gitea:latest
-```
-
-Now you should have a running instance of Gitea, to access the web UI just visit http://hostname:10080 in your favorite browser, if you want to clone repositories you can do it in the above case with `git clone ssh://git@hostname:10022/username/repo.git`.
-
-`hostname` should be replaced by ip adress of your gitea server.
-
-## Named Volumes 
-
-This guide will result in both the Gitea and PostgreSQL data stored in Docker named volumes. This makes for easy backup, restore and upgrades.
-
-### The Database
-
-First get the named volume ready:
-
-```
-$ docker volume create --name gitea-db-data
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+    ports:
+      - 3000:3000
+      - 222:22
 ```
 
-Now that we have a volume ready, we can pull and run the PostgreSQL image. This is also based upon Alpine Linux just like Gitea. This will mount the named volume at the correct location instead of a host dir.
+## Custom port
 
-```
-$ docker pull postgres:alpine
-$ docker run -d --name gitea-db \
-    -e POSTGRES_PASSWORD=<PASSWORD> \
-    -v gitea-db-data:/var/lib/postgresql/data \
-    -p 5432:5432 \
-    postgres:alpine
-```
+To bind the integrated openSSH daemon and the webserver on a different port, you just need to adjust the port section. It's common to just change the host port and keep the ports within the container like they are.
 
-Now the database is up and running, we need to configure it. Make sure you remember the password for when Gitea starts.
+```diff
+version: "2"
 
-```
-$ docker exec -it gitea-db psql -U postgres
-psql (9.6.1)
-Type "help" for help.
+networks:
+  gitea:
+    external: false
 
-postgres=# CREATE USER gitea WITH PASSWORD '<PASSWORD>';
-CREATE ROLE
-postgres=# CREATE DATABASE gitea OWNER gitea;
-CREATE DATABASE
-postgres=# \q
-$
-```
-
-### Gitea
-
-First, the named volume
-
-```
-$ docker volume create --name gitea-data
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+    ports:
+-      - 3000:3000
+-      - 222:22
++      - 8080:3000
++      - 2221:22
 ```
 
-Now run (remove the dns entry if not needed):
+## MySQL database
 
+To start Gitea in combination with a MySQL database you should apply these changes to the `docker-compose.yml` file created above.
+
+```diff
+version: "2"
+
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+     ports:
+       - 3000:3000
+       - 222:22
++    depends_on:
++      - db
++
++  db:
++    image: mysql:5.7
++    restart: always
++    environment:
++      - MYSQL_ROOT_PASSWORD=gitea
++      - MYSQL_USER=gitea
++      - MYSQL_PASSWORD=gitea
++      - MYSQL_DATABASE=gitea
++    networks:
++      - gitea
++    volumes:
++      - ./mysql:/var/lib/mysql
 ```
-$ docker run -d --name gitea \
-	--link gitea-db:gitea-db \
-	--dns 10.12.10.160 \
-	-p 11180:3000 \
-	-p 8322:22 \
-	-v gitea-data:/data \
-	gitea/gitea:latest
+
+## PostgreSQL database
+
+To start Gitea in combination with a PostgreSQL database you should apply these changes to the `docker-compose.yml` file created above.
+
+```diff
+version: "2"
+
+networks:
+  gitea:
+    external: false
+
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    networks:
+      - gitea
+    volumes:
+      - ./gitea:/data
+     ports:
+       - 3000:3000
+       - 222:22
++    depends_on:
++      - db
++
++  db:
++    image: postgres:9.6
++    restart: always
++    environment:
++      - POSTGRES_USER=gitea
++      - POSTGRES_PASSWORD=gitea
++      - POSTGRES_DB=gitea
++    networks:
++      - gitea
++    volumes:
++      - ./postgres:/var/lib/postgresql/data
 ```
 
-You should now have two Docker containers for Gitea and PostgreSQL plus two Docker named volumes and you should have a running instance of Gitea, to access the web UI just visit http://hostname:11180/install/ in your favorite browser.
+## Named volumes
 
-In the web UI set:
-- Database Type: PostgreSQL
-- Host: gitea-db:5432
-- User: gitea
-- Password: <PASSWORD>
-- ...
-- HTTP port: 11180
-- Application URL: http://hostname:11180
+To use named volumes instead of host volumes you just have to define and use the named volume within the `docker-compose.yml` configuration. This change will automatically create the required volume.
 
-Apply settings. You should be able to access to web UI now and create your first user.
+```diff
+version: "2"
+
+networks:
+  gitea:
+    external: false
+
++volumes:
++  gitea:
++    driver: local
++
+services:
+  server:
+    image: gitea/gitea:latest
+    restart: always
+    networks:
+      - gitea
+    volumes:
+-      - ./gitea:/data
++      - gitea:/data
+    ports:
+      - 3000:3000
+      - 222:22
+```
+
+If you are using MySQL or PostgreSQL it's up to you to create named volumes for these containers as well.
+
+## Start
+
+To start this setup based on `docker-compose` you just have to execute `docker-compose up -d` to launch Gitea in the background. You can see if it started properly via `docker-compose ps`, and you can tail the log output via `docker-compose logs`.
+
+If you want to shutdown the setup again just execute `docker-compose down`, this will stop and kill the containers, the volumes will still exist.
+
+## Install
+
+After starting the Docker setup via `docker-compose` you should access Gitea with your favorite browser to finalize the installation. Please visit http://server-ip:3000 and follow the installation wizard. If you have started a database with the `docker-compose` setup as documented above please note that you have to use `db` as the database hostname.
 
 # Customization
 
-Customization files described [here](https://docs.gitea.io/en-us/customizing-gitea/) should be placed in `/data/gitea` directory.
-
-Configuration file after installation will be saved at `/data/gitea/conf/app.ini`
+Customization files described [here](https://docs.gitea.io/en-us/customizing-gitea/) should be placed in `/data/gitea` directory. If you are using host volumes it's quite easy to access these files, for named volumes you have to do it through another container or you should directly access `/var/lib/docker/volumes/gitea_gitea/_data`. The configuration file will be saved at `/data/gitea/conf/app.ini` after the installation.
 
 # Anything missing?
 

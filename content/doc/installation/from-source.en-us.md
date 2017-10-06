@@ -37,7 +37,7 @@ git branch -a
 git checkout v1.0
 ```
 
-If you would validate a Pull Request, first your must enable this new branch : (xyz is PR value)
+If you would validate a Pull Request, first your must enable this new branch : (`xyz` is the PR id, for example `2663` for [#2663](https://github.com/go-gitea/gitea/pull/2663))
 
 ```
 git fetch origin pull/xyz/head:pr-xyz

@@ -49,7 +49,7 @@ following things:
     Try to run `Rewrite '.ssh/authorized_keys' file (for Gitea SSH keys)` on the
     Gitea admin panel.
 
-If you get a similar error, but without the public key part (shown below),
+If you get a similar error without the public key part (shown below) then
 authentication succeeded, but some other setting is preventing ssh from
 reaching the correct repository.
 

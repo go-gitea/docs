@@ -32,7 +32,7 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
 
 - Port **(required)**
   - The port to use when connecting to the server.
-  - Example: `636`
+  - Example: `389` for LDAP or `636` for LDAP SSL
 
 - Enable TLS Encryption (optional)
   - Whether to use TLS when connecting to the LDAP server.
@@ -42,15 +42,17 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     privileges. If a user accounts passes the filter, the user will be
     privileged as an administrator.
   - Example: `(objectClass=adminAccount)`
+  - Example for Microsoft AD: `(memberOf=CN=admin-group,OU=example,DC=example,DC=org)`
 
 - Username attribute (optional)
   - The attribute of the user's LDAP record containing the user name. Given
-    attribute value will be used for new Gogs account user name after first
+    attribute value will be used for new Gitea account user name after first
     successful sign-in. Leave empty to use login name given on sign-in form.
   - This is useful when supplied login name is matched against multiple
-    attributes, but only single specific attribute should be used for Gogs
+    attributes, but only single specific attribute should be used for Gitea
     account name, see "User Filter".
   - Example: `uid`
+  - Example for Microsoft AD: `sAMAccountName`
 
 - First name attribute (optional)
   - The attribute of the user's LDAP record containing the user's first name.
@@ -66,13 +68,6 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
   - The attribute of the user's LDAP record containing the user's email
     address. This will be used to populate their account information.
   - Example: `mail`
-
-```
-Port: 389
-User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
-Username: sAMAccountName
-```
 
 **LDAP via BindDN** adds the following fields:
 
@@ -95,6 +90,7 @@ Username: sAMAccountName
     authenticate. The `%s` matching parameter will be substituted with login
     name given on sign-in form.
   - Example: `(&(objectClass=posixAccount)(uid=%s))`
+  - Example for Microsoft AD: `(&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
   - To substitute more than once `%[1]s` should be used instead, eg. when
     matching supplied login name against multiple attributes such as user
     identifier, email or even phone number.
@@ -122,7 +118,7 @@ Username: sAMAccountName
 
 * Group Name Filter (optional)
     * An LDAP filter declaring how to find valid groups in the above DN.
-    * Example: `(|(cn=gogs_users)(cn=admins))`
+    * Example: `(|(cn=gitea_users)(cn=admins))`
 
 * User Attribute in Group (optional)
     * Which user LDAP attribute is listed in the group.
@@ -132,31 +128,14 @@ Username: sAMAccountName
     * Which group LDAP attribute contains an array above user attribute names.
     * Example: `memberUid`
 
-```
-Port: 389
-User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
-Username: sAMAccountName
-```
-
-
-**Using Microsoft AD**
-```
-Port: 389
-User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
-Username: sAMAccountName
-```
-
-
 ## PAM
 
 To configure this you just need to set the 'PAM Service Name' to a filename in `/etc/pam.d/`.
-If you want it to work with normal Linux passwords, the user running Gogs must have read access to `/etc/shadow`.
+If you want it to work with normal Linux passwords, the user running Gitea must have read access to `/etc/shadow`.
 
 ## SMTP
 
-This option allows Gogs to log in to your SMTP host as a Gogs user. To configure this, simply set the fields below:
+This option allows Gitea to log in to your SMTP host as a Gitea user. To configure this, simply set the fields below:
 
 - Authentication Name **(required)**
   - A name to assign to the new method of authorization.
@@ -170,11 +149,11 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 
 - Port **(required)**
   - The port to use when connecting to the server.
-  - Example: `587
+  - Example: `587`
 
 - Allowed Domains
   - Restrict what domains can log in if you're using public SMTP host or SMTP host with multiple domains.
-  - Example: `gogs.io,mydomain.com,mydomain2.com`
+  - Example: `gitea.io,mydomain.com,mydomain2.com`
 
 - Enable TLS Encryption
   - Enable TLS encryption on authentication.
@@ -185,18 +164,17 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 - This authentication is activate
   - Enable or disable this auth.
 
-
-## Freeipa
+## FreeIPA
 
 - In order to login to Gitea using FreeIPA credentials, you need to create a bind account for Gitea to use:
 
--  On the FreeIPA server, create a `gogs.ldif` file, replacing dc=example,dc=com with your DN, and providing an appropriately secure password:
+-  On the FreeIPA server, create a `gitea.ldif` file, replacing `dc=example,dc=com` with your DN, and providing an appropriately secure password:
 ```
-  dn: uid=gogs,cn=sysaccounts,cn=etc,dc=example,dc=com
+  dn: uid=gitea,cn=sysaccounts,cn=etc,dc=example,dc=com
   changetype: add
   objectclass: account
   objectclass: simplesecurityobject
-  uid: gogs
+  uid: gitea
   userPassword: secure password
   passwordExpirationTime: 20380119031407Z
   nsIdleTimeout: 0
@@ -205,21 +183,12 @@ This option allows Gogs to log in to your SMTP host as a Gogs user. To configure
 - Import the LDIF (change localhost to an IPA server if needed), you’ll be prompted for your Directory Manager password:
 ```
   ldapmodify -h localhost -p 389 -x -D \
-  "cn=Directory Manager" -W -f gogs.ldif
+  "cn=Directory Manager" -W -f gitea.ldif
 ```
--  Add an IPA group for gogs_users :
+-  Add an IPA group for gitea_users :
 ```
-  ipa group-add --desc="Gogs Users" gogs_users
+  ipa group-add --desc="Gitea Users" gitea_users
 ```
 -  Note! if you get error about ipa credentials please run kinit admin and give your admin accound password.
 
--  Now login to the Gitea as an Admin, click on “Authentication” under Admin Panel. Then click New LDAP Source and fill in the details, changing all where appropriate to your own domain
-
-```
-Port: 389
-User search base: (&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))
-Admin filter: (memberOf=CN=admin-group,OU=example,DC=example,DC=org)
-Username: sAMAccountName
-```
-
-
+-  Now login to the Gitea as an Admin, click on “Authentication” under Admin Panel. Then click `New LDAP Source` and fill in the details, changing all where appropriate to your own domain

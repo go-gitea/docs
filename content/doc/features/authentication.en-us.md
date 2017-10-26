@@ -19,7 +19,7 @@ name: Authentication
 
 # Authentication
 
-## LDAP
+## LDAP (Lightweight Directory Access Protocol)
 
 Both the LDAP via BindDN and the simple auth LDAP share the following fields:
 
@@ -39,10 +39,10 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
 
 - Admin Filter (optional)
   - An LDAP filter specifying if a user should be given administrator
-    privileges. If a user accounts passes the filter, the user will be
+    privileges. If a user account passes the filter, the user will be
     privileged as an administrator.
   - Example: `(objectClass=adminAccount)`
-  - Example for Microsoft AD: `(memberOf=CN=admin-group,OU=example,DC=example,DC=org)`
+  - Example for Microsoft Active Directory (AD): `(memberOf=CN=admin-group,OU=example,DC=example,DC=org)`
 
 - Username attribute (optional)
   - The attribute of the user's LDAP record containing the user name. Given
@@ -52,7 +52,7 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     attributes, but only single specific attribute should be used for Gitea
     account name, see "User Filter".
   - Example: `uid`
-  - Example for Microsoft AD: `sAMAccountName`
+  - Example for Microsoft Active Directory (AD): `sAMAccountName`
 
 - First name attribute (optional)
   - The attribute of the user's LDAP record containing the user's first name.
@@ -90,8 +90,8 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     authenticate. The `%s` matching parameter will be substituted with login
     name given on sign-in form.
   - Example: `(&(objectClass=posixAccount)(uid=%s))`
-  - Example for Microsoft AD: `(&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
-  - To substitute more than once `%[1]s` should be used instead, eg. when
+  - Example for Microsoft Active Directory (AD): `(&(objectCategory=Person)(memberOf=CN=user-group,OU=example,DC=example,DC=org)(sAMAccountName=%s)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))`
+  - To substitute more than once `%[1]s` should be used instead, e.g. when
     matching supplied login name against multiple attributes such as user
     identifier, email or even phone number.
   - Example: `(&(objectClass=Person)(|(uid=%[1]s)(mail=%[1]s)(mobile=%[1]s)))`
@@ -128,12 +128,12 @@ Both the LDAP via BindDN and the simple auth LDAP share the following fields:
     * Which group LDAP attribute contains an array above user attribute names.
     * Example: `memberUid`
 
-## PAM
+## PAM (Pluggable Authentication Module)
 
 To configure this you just need to set the 'PAM Service Name' to a filename in `/etc/pam.d/`.
 If you want it to work with normal Linux passwords, the user running Gitea must have read access to `/etc/shadow`.
 
-## SMTP
+## SMTP (Simple Mail Transfer Protocol)
 
 This option allows Gitea to log in to your SMTP host as a Gitea user. To configure this, simply set the fields below:
 
@@ -166,7 +166,7 @@ This option allows Gitea to log in to your SMTP host as a Gitea user. To configu
 
 ## FreeIPA
 
-- In order to login to Gitea using FreeIPA credentials, you need to create a bind account for Gitea to use:
+- In order to log in to Gitea using FreeIPA credentials, you need to create a bind account for Gitea to use:
 
 -  On the FreeIPA server, create a `gitea.ldif` file, replacing `dc=example,dc=com` with your DN, and providing an appropriately secure password:
 ```
@@ -189,6 +189,6 @@ This option allows Gitea to log in to your SMTP host as a Gitea user. To configu
 ```
   ipa group-add --desc="Gitea Users" gitea_users
 ```
--  Note! if you get error about ipa credentials please run kinit admin and give your admin accound password.
+-  Note: If you get an error about IPA credentials, please run `kinit admin` and give your admin account password.
 
--  Now login to the Gitea as an Admin, click on “Authentication” under Admin Panel. Then click `New LDAP Source` and fill in the details, changing all where appropriate to your own domain
+-  Now login to the Gitea as an Administrator, click on "Authentication" under Admin Panel. Then click `Add New Source` and fill in the details, changing all where appropriate to your own domain.

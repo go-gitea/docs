@@ -1,3 +1,7 @@
+# This repository is deprecated
+
+Documentation is now a part of the [main Gitea repository](https://github.com/go-gitea/gitea)
+
 # Gitea: Docs
 
 [![Build Status](http://drone.gitea.io/api/badges/go-gitea/docs/status.svg)](http://drone.gitea.io/go-gitea/docs)

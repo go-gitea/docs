@@ -1,3 +1,9 @@
+# DEPRICATION NOTICE
+
+This repository is depricated in favour of keeping the documentation a part of the [main repository](https://github.com/go-gitea/gitea).
+
+This documentation can now be found [here](https://github.com/go-gitea/gitea/tree/master/docs)
+
 # Gitea: Docs
 
 [![Build Status](http://drone.gitea.io/api/badges/go-gitea/docs/status.svg)](http://drone.gitea.io/go-gitea/docs)

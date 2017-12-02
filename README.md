@@ -1,6 +1,6 @@
 # DEPRECATION NOTICE
 
-This repository is deprEcated in favour of keeping the documentation a part of the [main repository](https://github.com/go-gitea/gitea).
+This repository is deprecated in favour of keeping the documentation a part of the [main repository](https://github.com/go-gitea/gitea).
 
 This documentation can now be found [here](https://github.com/go-gitea/gitea/tree/master/docs)
 
